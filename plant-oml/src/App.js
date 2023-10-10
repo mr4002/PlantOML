@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { Buffer } from 'buffer';
+import React  from 'react';
 
 function App() {
+  console.log("start");
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          PlantOML
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <form onSubmit={printOML}>
+          <label>
+            <textarea placeholder = "OML code"  name="omlcode"/>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
       </header>
     </div>
   );
+}
+
+const printOML = (f) =>{
+  f.preventDefault();
+  var omlcode = f.target.omlcode.value;
+  f.target.omlcode.value = "";
+  const hex = Buffer.from(omlcode, 'utf8').toString('hex');
+  console.log(hex)
 }
 
 export default App;
