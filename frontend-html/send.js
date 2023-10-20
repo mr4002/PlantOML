@@ -4,5 +4,6 @@ async function sendRequest() {
   console.log(message);
 }
 
+// this is the frontend request
 sendRequest();
 console.log("test");
