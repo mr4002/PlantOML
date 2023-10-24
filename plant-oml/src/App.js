@@ -10,9 +10,21 @@ function App() {
         <p>
           PlantOML
         </p>
-        <form onSubmit={printOML}>
+        <form onSubmit={printOMLNS}>
           <label>
-            <textarea placeholder = "OML code"  name="omlcode"/>
+            <textarea placeholder = "OML normal string"  name="omlcode"/>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <form onSubmit={printOMLHEX}>
+          <label>
+            <textarea placeholder = "OML HEX"  name="omlcode"/>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <form onSubmit={printOMLDS}>
+          <label>
+            <textarea placeholder = "OML deflated string"  name="omlcode"/>
           </label>
           <input type="submit" value="Submit" />
         </form>
@@ -21,12 +33,28 @@ function App() {
   );
 }
 
-const printOML = (f) =>{
+const printOMLNS = (f) =>{
   f.preventDefault();
   var omlcode = f.target.omlcode.value;
   f.target.omlcode.value = "";
   const hex = Buffer.from(omlcode, 'utf8').toString('hex');
   console.log(hex)
 }
+
+const printOMLHEX = (f) =>{
+  f.preventDefault();
+  var omlcode = f.target.omlcode.value;
+  f.target.omlcode.value = "";
+  console.log(omlcode)
+}
+
+const printOMLDS = (f) =>{
+  f.preventDefault();
+  var omlcode = f.target.omlcode.value;
+  f.target.omlcode.value = "";
+  const hex = Buffer.from(omlcode, 'utf8').toString('hex');
+  console.log(hex)
+}
+
 
 export default App;
