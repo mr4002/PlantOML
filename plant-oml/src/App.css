@@ -7,6 +7,48 @@
   pointer-events: none;
 }
 
+#textfield
+{
+    height:200px;
+    width:500px;
+    font-size:14pt;
+}
+
+#buttonid
+{
+    height:40px;
+    width:60px;
+    font-size:10pt;
+}
+
+.tabs-container {
+  width: 530px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background-color: #160505;
+}
+
+.tab.active {
+  background-color: #ffffff;
+}
+
+.tab-content {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
