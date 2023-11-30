@@ -1,5 +1,6 @@
 package com.plantoml.plantomlserver.controller;
 
+import com.plantoml.plantomlserver.translator.Oml2DotApp;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -19,16 +20,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/plantuml/oml")
+@RequestMapping("/plantoml/oml")
 public class DiagramController {
 
     private static final String PLANT_UML_ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_";
     private static final Base64.Decoder BASE64_DECODER = Base64.getDecoder();
     private final RestTemplate restTemplate;
 
+    private Oml2DotApp oml2DotApp;
+
     @Autowired
     public DiagramController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
+        this.oml2DotApp = new Oml2DotApp();
     }
 
     @GetMapping("/{textEncoding}")
@@ -84,8 +88,23 @@ public class DiagramController {
     private byte[] generateDiagramFromOmlText(String omlText) {
         //TODO: decode OML into AST then go from AST to Dot here
 
+        System.out.println("===================== OML TEXT START ======================");
         System.out.println(omlText);
-        return sendRequestToGraphviz(new String());
+        System.out.println("===================== OML TEXT END ======================");
+
+
+
+        System.out.println("===================== TRANSLATION START ======================");
+        String dot = this.oml2DotApp.parse(omlText);
+        System.out.println(dot);
+        System.out.println("===================== TRANSLATION END ======================");
+
+
+        if (dot != null) {
+            return sendRequestToGraphviz(dot);
+        } else  {
+            return null;
+        }
     }
 
     private byte[] decompressDeflate(byte[] compressedBytes) throws Exception {
