@@ -53,103 +53,32 @@ public class Oml2Dot extends OmlSwitch<Void> {
     }
 
     @Override
-    //instance orbiter : mission:Mission [
-    //		base:hasIdentifier "M.01"
-    //		base:hasCanonicalName "Orbiter Mission"
-    //		mission:pursues objectives:characterize-atmosphere
-    //		mission:pursues objectives:characterize-environment
-    //		mission:pursues objectives:characterize-gravitational-field
-    //	]
+//    instance orbiter : mission:Mission [
+//    		base:hasIdentifier "M.01"
+//    		base:hasCanonicalName "Orbiter Mission"
+//    		mission:pursues objectives:characterize-atmosphere
+//    		mission:pursues objectives:characterize-environment
+//    		mission:pursues objectives:characterize-gravitational-field
+//    	]
     public Void caseConceptInstance(final ConceptInstance instance) {
 
-        dotBuilder.append(instance.getName());                                                          //orbiter
         for (Classifier c : OmlSearch.findTypes(instance)) {
-            dotBuilder.append(" - " + c.getName());
+            dotBuilder.append("<<").append(c.getAbbreviatedIri()).append(">>\n");
         }
-        dotBuilder.append("\n");
-//            dotBuilder.append(instance.getAbbreviatedIri()).append("\n");
-//            dotBuilder.append(instance.getIri()).append("\n");
-//            dotBuilder.append(instance.getName()).append("\n");
-//            dotBuilder.append(instance.getRef()).append("\n");
-//            dotBuilder.append(instance.resolve()).append("\n");
-//        dotBuilder.append("====++++=====\n");
-//        List<PropertyValueAssertion> propertyValueAssertions = instance.getOwnedPropertyValues();
-//        for (PropertyValueAssertion propertyValueAssertion : propertyValueAssertions) {
-//            dotBuilder.append(propertyValueAssertion.getReferencedValue()).append("\n");
-//        }
+        dotBuilder.append(instance.getName()).append("\n");
 
-
-//        Set<Classifier> allTypes = this.omlSearch.findTypes(instance);
-//
-//        for (Classifier classifier : allTypes) {
-//            // Append the classifier's information to the dotBuilder
-////            dotBuilder.append(classifier.getAbbreviatedIri()).append("\n");
-////            dotBuilder.append(classifier.getIri()).append("\n");
-////            dotBuilder.append(classifier.getName()).append("\n");
-////            dotBuilder.append(classifier.getRef()).append("\n");
-////            dotBuilder.append(classifier.resolve()).append("\n");
-////
-////            dotBuilder.append(classifier.getOwnedEquivalences()).append("\n");
-//            EList<PropertyRestrictionAxiom> propertyRestrictions = classifier.getOwnedPropertyRestrictions();
-//            for (PropertyRestrictionAxiom axiom : propertyRestrictions) {
-//                // Access the name or other properties of the axiom
-//                SemanticProperty property = axiom.getProperty();
-//                String propertyName = property.getName();
-////                dotBuilder.append(propertyName).append("\n");
-//            }
-//        }
-//        dotBuilder.append("====++++=====\n");
-
-        EList<PropertyValueAssertion> propertyValueAssertions2 = instance.getOwnedPropertyValues();
-        for (PropertyValueAssertion propertyValueAssertion : propertyValueAssertions2) {
-            Literal tmp = propertyValueAssertion.getLiteralValue();
+        Set<PropertyValueAssertion> propertyValueAssertions =  omlSearch.findPropertyValueAssertionsWithSubject(instance);
+        for (PropertyValueAssertion propertyValueAssertion : propertyValueAssertions) {
+            Literal tmp = propertyValueAssertion.getLiteralValue(); //TODO: use omlSearch as this fails occasionally when tmp is null
             if (tmp != null) {
-                dotBuilder.append(tmp.getStringValue()).append("\n");                                   //M.01 + Orbiter Mission
+                dotBuilder.append(propertyValueAssertion.getProperty().getAbbreviatedIri()).append(" : ");
+                dotBuilder.append(tmp.getStringValue()).append("\n");                                   //base:hasIdentifier "M.01" + base:hasCanonicalName "Orbiter Mission"
+            } else {
+                dotBuilder.append(propertyValueAssertion.getReferencedValue().getName()).append("\n"); //objectives:characterize-environment
+                dotBuilder.append("<<").append(propertyValueAssertion.getProperty().getName()).append(">>\n");                  //pursues
             }
 
-//            dotBuilder.append(propertyValueAssertion.getProperty().getName()).append("\n");
         }
-
-//        dotBuilder.append("--\\/-----\n").append(this.omlSearch.
-//        findAllTypes(instance)).append("\n--/\\--\n");
-
-//        Set<Classifier> allTypes = this.omlSearch.findAllTypes(instance);
-
-        // Start the section in the dotBuilder
-
-        // Loop over each classifier in the set
-//        for (Classifier classifier : allTypes) {
-//            // Append the classifier's string representation to the dotBuilder
-//            dotBuilder.append(classifier.getName()).append("\n");
-//        }
-
-        // End the section in the dotBuilder
-
-
-
-
-
-
-//        dotBuilder.append(instance.getOwnedPropertyValues()).append("\n");
-
-//        EList<TypeAssertion> ownedTypes = instance.getOwnedTypes();
-//        for (TypeAssertion typeAssertion : ownedTypes) { //not it
-//            dotBuilder.append(typeAssertion.getType().getName()).append("\n");
-//        }
-//
-//        dotBuilder.append("++++++++++++++\n");
-//
-//        EList<Entity> entities = instance.getEntityTypes();
-//        for (Entity entity : entities) { //not it
-//            dotBuilder.append(entity.getName()).append("\n");
-//        }
-//
-//        dotBuilder.append("++++++++++++++\n");
-//
-//        EList<Classifier> classifiers = instance.getTypes();
-//        for (Classifier type : classifiers) { //not it
-//            dotBuilder.append(type.getName()).append("\n");
-//        }
 
         dotBuilder.append("==============\n");
 
@@ -161,8 +90,5 @@ public class Oml2Dot extends OmlSwitch<Void> {
         dotBuilder.append(concept.getAbbreviatedIri()).append("\n");
         return null;
     }
-
-
-
 
 }

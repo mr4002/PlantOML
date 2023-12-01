@@ -49,13 +49,13 @@ public class Oml2DotApp {
         // Write the OML text to a temporary file
         File tempFile = null;
         try {
-            tempFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlproject/src/oml/example.com/tutorial1/description/restaurant.oml");
+            tempFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial2/src/oml/example.com/tutorial2/description/missions.oml");
             try (FileWriter writer = new FileWriter(tempFile)) {
                 writer.write(omlText);
             }
 
             try {
-                final File inputCatalogFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlproject/catalog.xml");
+                final File inputCatalogFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial2/catalog.xml");
                 final OmlCatalog inputCatalog = OmlCatalog.create(URI.createFileURI(inputCatalogFile.toString()));
                 LOGGER.info("Catalog file loaded successfully. Resolved URIs:");
                 for (URI uri : inputCatalog.getResolvedUris()) {
@@ -74,6 +74,7 @@ public class Oml2DotApp {
             
             // perform validation
             String validationResults = OmlValidator.validate(resource);
+            System.out.println(resource.getURI());
             if (!validationResults.isEmpty()) {
                 LOGGER.error("Validation errors in resource: " + validationResults);
                 throw new IllegalStateException("Validation errors: " + validationResults);

@@ -1,0 +1,4917 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/tutorial2/description/bundle#"
+     xml:base="http://example.com/tutorial2/description/bundle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:bundle="http://example.com/tutorial2/description/bundle#"
+     xmlns:iso-1087-1="http://iso.org/iso-1087-1#">
+    <owl:Ontology rdf:about="http://example.com/tutorial2/description/bundle">
+        <owl:imports rdf:resource="http://example.com/tutorial2/description/components"/>
+        <owl:imports rdf:resource="http://example.com/tutorial2/description/interfaces"/>
+        <owl:imports rdf:resource="http://example.com/tutorial2/description/junctions"/>
+        <owl:imports rdf:resource="http://example.com/tutorial2/description/masses"/>
+        <owl:imports rdf:resource="http://example.com/tutorial2/description/missions"/>
+        <owl:imports rdf:resource="http://example.com/tutorial2/description/objectives"/>
+        <owl:imports rdf:resource="http://example.com/tutorial2/description/requirements"/>
+        <owl:imports rdf:resource="http://example.com/tutorial2/vocabulary/bundle"/>
+        <dc:type rdf:resource="http://opencaesar.io/oml#DescriptionBundle"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#lander-launch-system.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#lander-launch-system.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#lander-spacecraft.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#lander-spacecraft.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-command-and-data-handling-subsystem.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-command-and-data-handling-subsystem.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-guidance-navigation-control-subsystem.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-guidance-navigation-control-subsystem.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-harness.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-harness.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-launch-system.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-launch-system.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-mechanical-subsystem.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-mechanical-subsystem.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-power-subsystem.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-power-subsystem.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-propulsion-subsystem.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-propulsion-subsystem.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-spacraft-flight-software.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-spacraft-flight-software.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-telecom-subsystem.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-telecom-subsystem.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/tutorial2/description/masses#orbiter-thermal-subsystem.mass.magnitude -->
+
+
+    <rdf:Description rdf:about="http://example.com/tutorial2/description/masses#orbiter-thermal-subsystem.mass.magnitude">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#instantiates"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#unit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.1#ampere -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.1#ampere">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#ISQ7-electric-field-strength.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#ISQ7-electric-field-strength.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#ISQ7-electric-field-strength.per.electric-charge -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#ISQ7-electric-field-strength.per.electric-charge">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#ISQ8-electric-field-strength.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#ISQ8-electric-field-strength.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#ISQ8-electric-field-strength.per.electric-charge -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#ISQ8-electric-field-strength.per.electric-charge">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#SI7-volt-per-metre.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#SI7-volt-per-metre.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#SI7-volt-per-metre.per.coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#SI7-volt-per-metre.per.coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#SI8-volt-per-metre.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#SI8-volt-per-metre.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#SI8-volt-per-metre.per.coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#SI8-volt-per-metre.per.coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.10#volt-per-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.10#volt-per-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#ISQ7-electric-field-strength.electric-field-strength -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#ISQ7-electric-field-strength.electric-field-strength">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#ISQ7-electric-potential.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#ISQ7-electric-potential.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#ISQ7-voltage.electric-potential -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#ISQ7-voltage.electric-potential">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#ISQ8-electric-field-strength.electric-field-strength -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#ISQ8-electric-field-strength.electric-field-strength">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#ISQ8-electric-potential.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#ISQ8-electric-potential.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#ISQ8-voltage.electric-potential -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#ISQ8-voltage.electric-potential">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#SI7-volt.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#SI7-volt.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#SI7-volt.per.coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#SI7-volt.per.coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#SI8-volt.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#SI8-volt.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#SI8-volt.per.coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#SI8-volt.per.coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.11#volt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.11#volt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#ISQ7-electric-field-strength.electric-charge -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#ISQ7-electric-field-strength.electric-charge">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#ISQ7-electric-field-strength.per.electric-potential -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#ISQ7-electric-field-strength.per.electric-potential">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#ISQ8-electric-field-strength.electric-charge -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#ISQ8-electric-field-strength.electric-charge">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#ISQ8-electric-field-strength.per.electric-potential -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#ISQ8-electric-field-strength.per.electric-potential">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#SI7-farad.coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#SI7-farad.coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#SI7-farad.per.volt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#SI7-farad.per.volt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#SI8-farad.coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#SI8-farad.coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#SI8-farad.per.volt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#SI8-farad.per.volt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.13#farad -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.13#farad">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#ISQ7-electric-charge.electric-current -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#ISQ7-electric-charge.electric-current">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#ISQ7-electric-charge.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#ISQ7-electric-charge.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#ISQ8-electric-charge.electric-current -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#ISQ8-electric-charge.electric-current">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#ISQ8-electric-charge.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#ISQ8-electric-charge.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#SI7-coulomb.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#SI7-coulomb.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#SI7-coulomb.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#SI7-coulomb.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#SI8-coulomb.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#SI8-coulomb.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#SI8-coulomb.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#SI8-coulomb.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.2#coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.2#coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#ISQ7-magnetic-flux-density.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#ISQ7-magnetic-flux-density.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#ISQ7-magnetic-flux-density.per.electric-charge -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#ISQ7-magnetic-flux-density.per.electric-charge">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#ISQ7-magnetic-flux-density.per.velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#ISQ7-magnetic-flux-density.per.velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#ISQ8-magnetic-flux-density.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#ISQ8-magnetic-flux-density.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#ISQ8-magnetic-flux-density.per.electric-charge -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#ISQ8-magnetic-flux-density.per.electric-charge">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#ISQ8-magnetic-flux-density.per.velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#ISQ8-magnetic-flux-density.per.velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#SI7-tesla.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#SI7-tesla.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#SI7-tesla.per.coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#SI7-tesla.per.coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#SI7-tesla.per.metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#SI7-tesla.per.metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#SI8-tesla.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#SI8-tesla.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#SI8-tesla.per.coulomb -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#SI8-tesla.per.coulomb">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#SI8-tesla.per.metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#SI8-tesla.per.metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.21#tesla -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.21#tesla">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#ISQ7-power.electric-current -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#ISQ7-power.electric-current">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#ISQ7-power.voltage -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#ISQ7-power.voltage">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#ISQ8-power.electric-current -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#ISQ8-power.electric-current">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#ISQ8-power.voltage -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#ISQ8-power.voltage">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#SI7-watt.ampere -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#SI7-watt.ampere">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#SI7-watt.volt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#SI7-watt.volt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#SI8-watt.ampere -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#SI8-watt.ampere">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#SI8-watt.volt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#SI8-watt.volt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.45#watt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.45#watt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#ISQ7-resistance.per.electric-current -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#ISQ7-resistance.per.electric-current">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#ISQ7-resistance.voltage -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#ISQ7-resistance.voltage">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#ISQ8-resistance.per.electric-current -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#ISQ8-resistance.per.electric-current">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#ISQ8-resistance.voltage -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#ISQ8-resistance.voltage">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#SI7-ohm.per.ampere -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#SI7-ohm.per.ampere">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#SI7-ohm.volt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#SI7-ohm.volt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#SI8-ohm.per.ampere -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#SI8-ohm.per.ampere">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#SI8-ohm.volt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#SI8-ohm.volt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iec-80000-6.46#ohm -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iec-80000-6.46#ohm">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-1#SI7 -->
+
+
+    <rdf:Description rdf:about="http://iso.org/iso-80000-1#SI7">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#given"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://iso.org/iso-80000-1#SI8 -->
+
+
+    <rdf:Description rdf:about="http://iso.org/iso-80000-1#SI8">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#given"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-breadth.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-breadth.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-cartesian-coordinate.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-cartesian-coordinate.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-diameter.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-diameter.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-displacement.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-displacement.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-distance.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-distance.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-height.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-height.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-length-of-path.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-length-of-path.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-position-vector.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-position-vector.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-radial-distance.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-radial-distance.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-radius-of-curvature.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-radius-of-curvature.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-radius.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-radius.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ7-thickness.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ7-thickness.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-breadth.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-breadth.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-cartesian-coordinate.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-cartesian-coordinate.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-diameter.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-diameter.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-displacement.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-displacement.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-distance.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-distance.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-height.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-height.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-length-of-path.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-length-of-path.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-position-vector.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-position-vector.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-radial-distance.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-radial-distance.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-radius-of-curvature.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-radius-of-curvature.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-radius.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-radius.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#ISQ8-thickness.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#ISQ8-thickness.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#decimetre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#decimetre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#kilometre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#kilometre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.1#metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.1#metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#ISQ7-angular-velocity.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#ISQ7-angular-velocity.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#ISQ7-angular-velocity.plane-angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#ISQ7-angular-velocity.plane-angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#ISQ8-angular-velocity.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#ISQ8-angular-velocity.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#ISQ8-angular-velocity.plane-angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#ISQ8-angular-velocity.plane-angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#SI7-radian-per-second.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#SI7-radian-per-second.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#SI7-radian-per-second.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#SI7-radian-per-second.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#SI8-radian-per-second.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#SI8-radian-per-second.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#SI8-radian-per-second.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#SI8-radian-per-second.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.10#radian-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.10#radian-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#ISQ7-angular-acceleration.angular-velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#ISQ7-angular-acceleration.angular-velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#ISQ7-angular-acceleration.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#ISQ7-angular-acceleration.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#ISQ8-angular-acceleration.angular-velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#ISQ8-angular-acceleration.angular-velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#ISQ8-angular-acceleration.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#ISQ8-angular-acceleration.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#SI7-radian-per-second-squared.per.second-squared -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#SI7-radian-per-second-squared.per.second-squared">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#SI7-radian-per-second-squared.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#SI7-radian-per-second-squared.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#SI8-radian-per-second-squared.per.second-squared -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#SI8-radian-per-second-squared.per.second-squared">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#SI8-radian-per-second-squared.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#SI8-radian-per-second-squared.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.11#radian-per-second-squared -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.11#radian-per-second-squared">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.12#ISQ7-period-duration.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.12#ISQ7-period-duration.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.12#ISQ8-period-duration.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.12#ISQ8-period-duration.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#ISQ7-rotation.per.2pi-plane-angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#ISQ7-rotation.per.2pi-plane-angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#ISQ7-rotation.plane-angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#ISQ7-rotation.plane-angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#ISQ8-rotation.per.2pi-plane-angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#ISQ8-rotation.per.2pi-plane-angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#ISQ8-rotation.plane-angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#ISQ8-rotation.plane-angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#SI7-revolution.per.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#SI7-revolution.per.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#SI7-revolution.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#SI7-revolution.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#SI8-revolution.per.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#SI8-revolution.per.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#SI8-revolution.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#SI8-revolution.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.14#revolution -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.14#revolution">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#ISQ7-frequency.per.period-duration -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#ISQ7-frequency.per.period-duration">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#ISQ7-rotational-frequency.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#ISQ7-rotational-frequency.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#ISQ7-rotational-frequency.rotation -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#ISQ7-rotational-frequency.rotation">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#ISQ8-frequency.per.period-duration -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#ISQ8-frequency.per.period-duration">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#ISQ8-rotational-frequency.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#ISQ8-rotational-frequency.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#ISQ8-rotational-frequency.rotation -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#ISQ8-rotational-frequency.rotation">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#SI7-hertz.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#SI7-hertz.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#SI7-revolution-per-second.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#SI7-revolution-per-second.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#SI7-revolution-per-second.revolution -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#SI7-revolution-per-second.revolution">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#SI8-hertz.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#SI8-hertz.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#SI8-revolution-per-second.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#SI8-revolution-per-second.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#SI8-revolution-per-second.revolution -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#SI8-revolution-per-second.revolution">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#hertz -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#hertz">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.15#revolution-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.15#revolution-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.2#ISQ7-curvature.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.2#ISQ7-curvature.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.2#ISQ8-curvature.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.2#ISQ8-curvature.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.2#SI7-metre-1.per.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.2#SI7-metre-1.per.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.2#SI8-metre-1.per.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.2#SI8-metre-1.per.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.2#metre-1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.2#metre-1">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.3#ISQ7-area.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.3#ISQ7-area.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.3#ISQ8-area.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.3#ISQ8-area.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.3#SI7-square_metre-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.3#SI7-square_metre-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.3#SI8-square_metre-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.3#SI8-square_metre-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.3#square_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.3#square_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.4#ISQ7-volume-length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.4#ISQ7-volume-length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.4#ISQ8-volume-length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.4#ISQ8-volume-length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.4#SI7-cubic_metre-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.4#SI7-cubic_metre-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.4#SI7-litre.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.4#SI7-litre.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.4#SI8-cubic_metre-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.4#SI8-cubic_metre-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.4#SI8-litre.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.4#SI8-litre.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.4#cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.4#cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.4#litre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.4#litre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#ISQ7-2pi-plane-angle.plane-angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#ISQ7-2pi-plane-angle.plane-angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#ISQ7-plane-angle.arc-length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#ISQ7-plane-angle.arc-length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#ISQ7-plane-angle.per.radius -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#ISQ7-plane-angle.per.radius">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#ISQ8-2pi-plane-angle.plane-angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#ISQ8-2pi-plane-angle.plane-angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#SI7-radian.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#SI7-radian.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#SI7-radian.per.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#SI7-radian.per.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#degree-of-arc -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#degree-of-arc">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#minute-of-arc -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#minute-of-arc">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.5#second-of-arc -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.5#second-of-arc">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.6#ISQ7-solid-angle.area -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.6#ISQ7-solid-angle.area">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.6#ISQ7-solid-angle.per.radius -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.6#ISQ7-solid-angle.per.radius">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.6#ISQ8-solid-angle.angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.6#ISQ8-solid-angle.angle">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.6#SI7-steradian.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.6#SI7-steradian.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.6#SI7-steradian.square_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.6#SI7-steradian.square_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.6#SI8-steradian.radian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.6#SI8-steradian.radian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.6#steradian -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.6#steradian">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.7#hour -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.7#hour">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.7#minute -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.7#minute">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.7#second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.7#second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#ISQ7-velocity.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#ISQ7-velocity.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#ISQ7-velocity.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#ISQ7-velocity.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#ISQ8-velocity.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#ISQ8-velocity.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#ISQ8-velocity.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#ISQ8-velocity.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#SI7-kilometre-per-hour.kilometre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#SI7-kilometre-per-hour.kilometre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#SI7-kilometre-per-hour.per.hour -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#SI7-kilometre-per-hour.per.hour">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#SI7-metre-per-second.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#SI7-metre-per-second.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#SI7-metre-per-second.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#SI7-metre-per-second.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#SI8-kilometre-per-hour.kilometre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#SI8-kilometre-per-hour.kilometre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#SI8-kilometre-per-hour.per.hour -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#SI8-kilometre-per-hour.per.hour">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#SI8-metre-per-second.metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#SI8-metre-per-second.metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#SI8-metre-per-second.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#SI8-metre-per-second.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#kilometre-per-hour -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#kilometre-per-hour">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.8#metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.8#metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#ISQ7-acceleration.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#ISQ7-acceleration.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#ISQ7-acceleration.velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#ISQ7-acceleration.velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#ISQ8-acceleration.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#ISQ8-acceleration.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#ISQ8-acceleration.velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#ISQ8-acceleration.velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#SI7-metre-per-second-squared.metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#SI7-metre-per-second-squared.metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#SI7-metre-per-second.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#SI7-metre-per-second.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#SI8-metre-per-second-squared.metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#SI8-metre-per-second-squared.metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#SI8-metre-per-second.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#SI8-metre-per-second.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-3.9#metre-per-second-squared -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-3.9#metre-per-second-squared">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.1#kilogram -->
+
+
+    <rdf:Description rdf:about="http://iso.org/iso-80000-4.1#kilogram">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#ISQ7-inpulse.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#ISQ7-inpulse.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#ISQ7-inpulse.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#ISQ7-inpulse.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#ISQ8-inpulse.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#ISQ8-inpulse.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#ISQ8-inpulse.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#ISQ8-inpulse.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#SI7-newton-second.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#SI7-newton-second.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#SI7-newton-second.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#SI7-newton-second.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#SI8-newton-second.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#SI8-newton-second.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#SI8-newton-second.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#SI8-newton-second.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.11#newton-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.11#newton-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#ISQ7-moment-of-force.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#ISQ7-moment-of-force.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#ISQ7-moment-of-force.position-vector -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#ISQ7-moment-of-force.position-vector">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#ISQ7-torque.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#ISQ7-torque.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#ISQ8-moment-of-force.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#ISQ8-moment-of-force.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#ISQ8-moment-of-force.position-vector -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#ISQ8-moment-of-force.position-vector">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#ISQ8-torque.length -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#ISQ8-torque.length">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#SI7-newton-metre.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#SI7-newton-metre.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#SI7-newton-metre.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#SI7-newton-metre.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#SI8-newton-metre.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#SI8-newton-metre.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#SI8-newton-metre.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#SI8-newton-metre.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.13#newton-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.13#newton-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#ISQ7-angular-inpulse.moment-of-force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#ISQ7-angular-inpulse.moment-of-force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#ISQ7-angular-inpulse.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#ISQ7-angular-inpulse.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#ISQ8-angular-inpulse.moment-of-force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#ISQ8-angular-inpulse.moment-of-force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#ISQ8-angular-inpulse.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#ISQ8-angular-inpulse.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#SI7-newton-metre-second.newton-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#SI7-newton-metre-second.newton-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#SI7-newton-metre-second.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#SI7-newton-metre-second.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#SI8-newton-metre-second.newton-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#SI8-newton-metre-second.newton-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#SI8-newton-metre-second.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#SI8-newton-metre-second.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.14#newton-metre-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.14#newton-metre-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#ISQ7-pressure.area -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#ISQ7-pressure.area">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#ISQ7-pressure.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#ISQ7-pressure.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#ISQ8-pressure.area -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#ISQ8-pressure.area">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#ISQ8-pressure.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#ISQ8-pressure.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#SI7-pascal.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#SI7-pascal.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#SI7-pascal.per.square-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#SI7-pascal.per.square-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#SI8-pascal.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#SI8-pascal.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#SI8-pascal.per.square-metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#SI8-pascal.per.square-metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.15#pascal -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.15#pascal">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#ISQ7-mass-density.mass -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#ISQ7-mass-density.mass">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#ISQ7-mass-density.per.volume -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#ISQ7-mass-density.per.volume">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#ISQ7-reference-mass-density.mass-density -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#ISQ7-reference-mass-density.mass-density">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#ISQ8-mass-density.mass -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#ISQ8-mass-density.mass">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#ISQ8-mass-density.per.volume -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#ISQ8-mass-density.per.volume">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#ISQ8-reference-mass-density.mass-density -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#ISQ8-reference-mass-density.mass-density">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#SI7-kilogram-per-cubic_metre.kilogram -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#SI7-kilogram-per-cubic_metre.kilogram">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#SI7-kilogram-per-cubic_metre.per.cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#SI7-kilogram-per-cubic_metre.per.cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#SI8-kilogram-per-cubic_metre.kilogram -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#SI8-kilogram-per-cubic_metre.kilogram">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#SI8-kilogram-per-cubic_metre.per.cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#SI8-kilogram-per-cubic_metre.per.cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.2#kilogram-per-cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.2#kilogram-per-cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#ISQ7-power.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#ISQ7-power.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#ISQ7-power.velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#ISQ7-power.velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#ISQ8-power.force -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#ISQ8-power.force">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#ISQ8-power.velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#ISQ8-power.velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#SI7-watt.metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#SI7-watt.metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#SI7-watt.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#SI7-watt.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#SI8-watt.metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#SI8-watt.metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#SI8-watt.newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#SI8-watt.newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.26#watt -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.26#watt">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#ISQ7-mass-density.per.reference-mass-density -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#ISQ7-mass-density.per.reference-mass-density">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#ISQ7-relative-mass-density.mass-density -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#ISQ7-relative-mass-density.mass-density">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#ISQ8-mass-density.per.reference-mass-density -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#ISQ8-mass-density.per.reference-mass-density">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#ISQ8-relative-mass-density.mass-density -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#ISQ8-relative-mass-density.mass-density">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#SI7-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.kilogram-per-cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#SI7-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.kilogram-per-cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#SI7-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.per.kilogram-per-cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#SI7-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.per.kilogram-per-cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#SI8-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.kilogram-per-cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#SI8-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.kilogram-per-cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#SI8-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.per.kilogram-per-cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#SI8-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.per.kilogram-per-cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.3#kilogram-per-cubic_metre-over-kilogram-per-cubic_metre -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.3#kilogram-per-cubic_metre-over-kilogram-per-cubic_metre">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#ISQ7-momentum.mass -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#ISQ7-momentum.mass">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#ISQ7-momentum.velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#ISQ7-momentum.velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#ISQ8-momentum.mass -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#ISQ8-momentum.mass">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#ISQ8-momentum.velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#ISQ8-momentum.velocity">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#SI7-kilogram-metre-per-second.kilogram -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#SI7-kilogram-metre-per-second.kilogram">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#SI7-kilogram-metre-per-second.metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#SI7-kilogram-metre-per-second.metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#SI8-kilogram-metre-per-second.kilogram -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#SI8-kilogram-metre-per-second.kilogram">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#SI8-kilogram-metre-per-second.metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#SI8-kilogram-metre-per-second.metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.8#kilogram-metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.8#kilogram-metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#ISQ7-force.momentum -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#ISQ7-force.momentum">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#ISQ7-force.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#ISQ7-force.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#ISQ8-force.momentum -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#ISQ8-force.momentum">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#ISQ8-force.per.time -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#ISQ8-force.per.time">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#SI7-newton.kilogram-metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#SI7-newton.kilogram-metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#SI7-newton.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#SI7-newton.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#SI8-newton.kilogram-metre-per-second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#SI8-newton.kilogram-metre-per-second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#SI8-newton.per.second -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#SI8-newton.per.second">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#exponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-4.9#newton -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-4.9#newton">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iso.org/iso-80000-5.1#kelvin -->
+
+
+    <owl:NamedIndividual rdf:about="http://iso.org/iso-80000-5.1#kelvin">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#characterizes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#hasMultiple"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://bipm.org/jcgm/vim4#isMultipleOf"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.17.2020-11-07T15:03:35Z) https://github.com/owlcs/owlapi/ -->
+
+
