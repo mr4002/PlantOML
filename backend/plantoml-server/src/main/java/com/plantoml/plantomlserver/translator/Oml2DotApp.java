@@ -43,56 +43,69 @@ public class Oml2DotApp {
         final ResourceSet resourceSet = new ResourceSetImpl();
         resourceSet.eAdapters().add(new ECrossReferenceAdapterEx());
 
-        // convert the string into an InputStream for EMF to process
-        ByteArrayInputStream inStream = new ByteArrayInputStream(omlText.getBytes(StandardCharsets.UTF_8));
 
-        // create a resource and load the OML text from the InputStream
-        Resource resource = resourceSet.createResource(URI.createURI("dummy:/example.oml"));
+        // Write the OML text to a temporary file
+        File tempFile = null;
         try {
-            resource.load(inStream, Collections.emptyMap());
-            LOGGER.info("Resource loaded: " + resource.toString());
-
-            //TODO: figure out why validation always fails
-            // perform validation if necessary
-            String validationResults = OmlValidator.validate(resource);
-            if (!validationResults.isEmpty()) {
-                LOGGER.error("Validation errors in resource: " + validationResults);
-                throw new IllegalStateException("Validation errors: " + validationResults);
+            tempFile = File.createTempFile("oml_", ".oml");
+            try (FileWriter writer = new FileWriter(tempFile)) {
+                writer.write(omlText);
             }
 
+            // Now load the resource from the file
+            Resource resource = resourceSet.createResource(URI.createFileURI(tempFile.getAbsolutePath()));
+            resource.load(null);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // traverse the resource and convert to DOT format
+            // Convert to DOT format and clean up the temporary file
             String dotRepresentation = convertToDot(resource);
             LOGGER.info("Converted OML to DOT format: ");
-            LOGGER.info( dotRepresentation);
+            LOGGER.info(dotRepresentation);
 
-            LOGGER.info("=================================================================");
-            LOGGER.info("                          E N D ");
-            LOGGER.info("                        Oml to Dot");
-            LOGGER.info("=================================================================");
-
-            return dotRepresentation; //on success
-
-        } catch (Exception e) {
-            LOGGER.error("Error parsing OML text: " + e.getMessage(), e);
+            return dotRepresentation;
+        } catch (IOException e) {
+            LOGGER.error("Error parsing OML text: ", e);
+            return null; // Or handle the error as appropriate
+        } finally {
+            // Clean up the temporary file if it was created
+            if (tempFile != null && tempFile.exists()) {
+                tempFile.delete();
+            }
         }
-
-        return null; //on error/failure
     }
+//        // convert the string into an InputStream for EMF to process
+//        ByteArrayInputStream inStream = new ByteArrayInputStream(omlText.getBytes(StandardCharsets.UTF_8));
+//        // create a resource and load the OML text from the InputStream
+//        Resource resource = resourceSet.createResource(URI.createURI("dummy:/example.oml"));
+//        try {
+//            resource.load(inStream, Collections.emptyMap());
+//            LOGGER.info("Resource loaded: " + resource.toString());
+//
+//            //TODO: figure out why validation always fails
+//            // perform validation if necessary
+////            String validationResults = OmlValidator.validate(resource);
+////            if (!validationResults.isEmpty()) {
+////                LOGGER.error("Validation errors in resource: " + validationResults);
+////                throw new IllegalStateException("Validation errors: " + validationResults);
+////            }
+//
+//            // traverse the resource and convert to DOT format
+//            String dotRepresentation = convertToDot(resource);
+//            LOGGER.info("Converted OML to DOT format: ");
+//            LOGGER.info( dotRepresentation);
+//
+//            LOGGER.info("=================================================================");
+//            LOGGER.info("                          E N D ");
+//            LOGGER.info("                        Oml to Dot");
+//            LOGGER.info("=================================================================");
+//
+//            return dotRepresentation; //on success
+//
+//        } catch (Exception e) {
+//            LOGGER.error("Error parsing OML text: " + e.getMessage(), e);
+//        }
+//
+//        return null; //on error/failure
+//    }
 
     private String convertToDot(Resource resource) {
         Oml2Dot oml2Dot = new Oml2Dot();
