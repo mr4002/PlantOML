@@ -6,9 +6,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
+import io.opencaesar.oml.Ontology;
 import io.opencaesar.oml.dsl.OmlStandaloneSetup;
 import io.opencaesar.oml.resource.OmlJsonResourceFactory;
 import io.opencaesar.oml.resource.OmlXMIResourceFactory;
+import io.opencaesar.oml.util.OmlCatalog;
+import io.opencaesar.oml.util.OmlRead;
 import io.opencaesar.oml.validate.OmlValidator;
 
 
@@ -43,23 +46,48 @@ public class Oml2DotApp {
         final ResourceSet resourceSet = new ResourceSetImpl();
         resourceSet.eAdapters().add(new ECrossReferenceAdapterEx());
 
-
         // Write the OML text to a temporary file
         File tempFile = null;
         try {
-            tempFile = File.createTempFile("oml_", ".oml");
+            tempFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlproject/src/oml/example.com/tutorial1/description/restaurant.oml");
             try (FileWriter writer = new FileWriter(tempFile)) {
                 writer.write(omlText);
+            }
+
+            try {
+                final File inputCatalogFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlproject/catalog.xml");
+                final OmlCatalog inputCatalog = OmlCatalog.create(URI.createFileURI(inputCatalogFile.toString()));
+                LOGGER.info("Catalog file loaded successfully. Resolved URIs:");
+                for (URI uri : inputCatalog.getResolvedUris()) {
+                    LOGGER.info(uri.toString());
+                }
+            } catch (IOException e) {
+                LOGGER.error("Error parsing catalog file: " + e.getMessage(), e);
             }
 
             // Now load the resource from the file
             Resource resource = resourceSet.createResource(URI.createFileURI(tempFile.getAbsolutePath()));
             resource.load(null);
+            for (Ontology o : OmlRead.getImportedOntologyClosure(OmlRead.getOntology(resource), false)) {
+                System.out.println(o.toString());
+            }
+            
+            // perform validation
+            String validationResults = OmlValidator.validate(resource);
+            if (!validationResults.isEmpty()) {
+                LOGGER.error("Validation errors in resource: " + validationResults);
+                throw new IllegalStateException("Validation errors: " + validationResults);
+            }
 
             // Convert to DOT format and clean up the temporary file
             String dotRepresentation = convertToDot(resource);
             LOGGER.info("Converted OML to DOT format: ");
             LOGGER.info(dotRepresentation);
+
+            LOGGER.info("=================================================================");
+            LOGGER.info("                          E N D ");
+            LOGGER.info("                        Oml to Dot");
+            LOGGER.info("=================================================================");
 
             return dotRepresentation;
         } catch (IOException e) {

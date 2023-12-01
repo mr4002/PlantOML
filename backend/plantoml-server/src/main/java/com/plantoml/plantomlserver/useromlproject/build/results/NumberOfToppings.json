@@ -1,0 +1,9 @@
+{ "head": {
+    "vars": [ "toppingKind" , "toppingCount" ]
+  } ,
+  "results": {
+    "bindings": [
+      
+    ]
+  }
+}

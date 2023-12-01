@@ -62,7 +62,11 @@ public class Oml2Dot extends OmlSwitch<Void> {
     //	]
     public Void caseConceptInstance(final ConceptInstance instance) {
 
-        dotBuilder.append(instance.getName()).append("\n");                                                          //orbiter
+        dotBuilder.append(instance.getName());                                                          //orbiter
+        for (Classifier c : OmlSearch.findTypes(instance)) {
+            dotBuilder.append(" - " + c.getName());
+        }
+        dotBuilder.append("\n");
 //            dotBuilder.append(instance.getAbbreviatedIri()).append("\n");
 //            dotBuilder.append(instance.getIri()).append("\n");
 //            dotBuilder.append(instance.getName()).append("\n");
