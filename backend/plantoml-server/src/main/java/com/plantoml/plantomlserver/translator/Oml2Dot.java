@@ -128,12 +128,12 @@ public class Oml2Dot extends OmlSwitch<Void> {
     public Void caseRelationInstance(RelationInstance object) {
 
         String instanceName = object.getName().replace("&", "&amp;");
-        dotBuilder.append("\"" + instanceName).append("\" [label=<\n");
+        dotBuilder.append("\"" + instanceName).append("\" [label=<\n");                                                 //orbiter-ground-data-system.orbiter-spacecraft.command.uplink
 
 
         dotBuilder.append("<TABLE BORDER=\"0\" CELLBORDER=\"1\" CELLSPACING=\"0\">\n<TR><TD BGCOLOR=\"lightgrey\" ALIGN=\"CENTER\">");
         for (Classifier c : OmlSearch.findTypes(object)) {
-            dotBuilder.append("«").append(c.getAbbreviatedIri()).append("»");                   //<<mission:Mission>>
+            dotBuilder.append("«").append(c.getAbbreviatedIri()).append("»");                   ////mission:Junction              NOTE: think kepler 16b is typo in reference graph
         }
 
         dotBuilder.append("<BR\n ALIGN=\"CENTER\"/>").append(instanceName);
@@ -143,7 +143,7 @@ public class Oml2Dot extends OmlSwitch<Void> {
         Set<PropertyValueAssertion> propertyValueAssertions =  omlSearch.findPropertyValueAssertionsWithSubject(object);
         for (PropertyValueAssertion propertyValueAssertion : propertyValueAssertions) {
             Literal tmp = propertyValueAssertion.getLiteralValue();
-            if (tmp != null) {
+            if (tmp != null) {                                                                                           //base:hasIdentifier "J.01"
                 dotBuilder.append("<TR><TD ALIGN=\"LEFT\">").append((propertyValueAssertion.getProperty().getAbbreviatedIri() + " : " + tmp.getStringValue()).replace("&", "&amp;")).append("</TD></TR>\n");
             } else { //this does nothing for this example but likely catches a corner case
                 String referencedValName = propertyValueAssertion.getReferencedValue().getName().replace("&", "&amp;");
@@ -164,7 +164,7 @@ public class Oml2Dot extends OmlSwitch<Void> {
         }
 
         EList<NamedInstance> objectSources =  object.getSources();
-        for (NamedInstance objectSource: objectSources) {
+        for (NamedInstance objectSource: objectSources) {                                                               //orbiter-ground-data-system.commandOut
             String referencedValName = objectSource.getName();
             conceptInstanceBuilder
                     .append("\"" + referencedValName.replace("-", "_") + "\"").append(" [label=<<TABLE BORDER=\"0\" CELLBORDER=\"1\" CELLSPACING=\"0\" BGCOLOR=\"green\">\n")
@@ -179,7 +179,7 @@ public class Oml2Dot extends OmlSwitch<Void> {
         }
 
         EList<NamedInstance> objectTargets =  object.getTargets();
-        for (NamedInstance objectTarget: objectTargets) {
+        for (NamedInstance objectTarget: objectTargets) {                                                               //orbiter-spacecraft.commandIn
             String referencedValName = objectTarget.getName();
             conceptInstanceBuilder
                     .append("\"" + referencedValName.replace("-", "_") + "\"").append(" [label=<<TABLE BORDER=\"0\" CELLBORDER=\"1\" CELLSPACING=\"0\" BGCOLOR=\"green\">\n")
@@ -194,76 +194,7 @@ public class Oml2Dot extends OmlSwitch<Void> {
         }
 
         dotBuilder.append("</TABLE>>];\n\n");
-
-//        dotBuilder.append(object.getName()).append("\n");                                                               //orbiter-ground-data-system.orbiter-spacecraft.command.uplink
-//
-//        for (Classifier c : OmlSearch.findTypes(object)) {
-//            dotBuilder.append(c.getAbbreviatedIri()).append("\n");                                         //mission:Junction              NOTE: think kepler 16b is typo in reference graph
-//        }
-//
-//        Set<PropertyValueAssertion> propertyValueAssertions =  omlSearch.findPropertyValueAssertionsWithSubject(object);
-//        for (PropertyValueAssertion propertyValueAssertion : propertyValueAssertions) {
-//            Literal tmp = propertyValueAssertion.getLiteralValue();
-//            if (tmp != null) {
-//                dotBuilder.append(propertyValueAssertion.getProperty().getAbbreviatedIri()).append(" : ");
-//                dotBuilder.append(tmp.getStringValue()).append("\n");                                                   //base:hasIdentifier "J.01"
-//            } else { //this does nothing for this example but likely catches a corner case
-//                dotBuilder.append(propertyValueAssertion.getReferencedValue().getName()).append("\n");
-//                dotBuilder.append("<<").append(propertyValueAssertion.getProperty().getName()).append(">>\n");
-//            }
-//        }
-//
-//        EList<NamedInstance> objectSources =  object.getSources();
-//
-//        for (NamedInstance objectSource: objectSources) {
-//            dotBuilder.append(objectSource.getName() + "\n");                                                           //orbiter-ground-data-system.commandOut
-//        }
-//
-//        EList<NamedInstance> objectTargets =  object.getTargets();
-//        for (NamedInstance objectTarget: objectTargets) {
-//            dotBuilder.append(objectTarget.getName() + "\n");                                                           //orbiter-spacecraft.commandIn
-//        }
-
-
-
-
-
-
-
-
-//
-//        dotBuilder.append("</TD></TR>\n");
-//        Set<PropertyValueAssertion> propertyValueAssertions =  omlSearch.findPropertyValueAssertionsWithSubject(object);
-//        for (PropertyValueAssertion propertyValueAssertion : propertyValueAssertions) {
-//            Literal tmp = propertyValueAssertion.getLiteralValue();
-//            if (tmp != null) {
-//                dotBuilder.append("<TR><TD ALIGN=\"LEFT\">").append((propertyValueAssertion.getProperty().getAbbreviatedIri() + " : " + tmp.getStringValue()).replace("&", "&amp;")).append("</TD></TR>\n");
-////                dotBuilder.append(propertyValueAssertion.getProperty().getAbbreviatedIri()).append(" : ");
-////                dotBuilder.append(tmp.getStringValue()).append("\n");                                   //base:hasIdentifier "M.01" + base:hasCanonicalName "Orbiter Mission"
-//
-//            } else {
-//                String referencedValName = propertyValueAssertion.getReferencedValue().getName().replace("&", "&amp;");
-//                edgeBuilder.append("\"" + instanceName + "\"")
-//                        .append(" -> \"")
-//                        .append(referencedValName.replace("-", "_"))
-//                        .append("\" [label=\"")
-//                        .append("«")
-//                        .append(propertyValueAssertion.getProperty().getName())
-//                        .append("»\"];\n");
-//
-//                conceptInstanceBuilder
-//                        .append("\"" + referencedValName.replace("-", "_") + "\"").append(" [label=<<TABLE BORDER=\"0\" CELLBORDER=\"1\" CELLSPACING=\"0\" BGCOLOR=\"green\">\n")
-//                        .append("<TR><TD ALIGN=\"CENTER\">«concept instance»<BR ALIGN=\"CENTER\"/>").append(referencedValName).append("</TD></TR>\n")
-//                        .append("<TR><TD ALIGN=\"LEFT\"></TD></TR>\n")
-//                        .append("</TABLE>>];\n");
-////                dotBuilder.append(propertyValueAssertion.getReferencedValue().getName()).append("\n");                          //objectives:characterize-environment
-////                dotBuilder.append("<<").append(propertyValueAssertion.getProperty().getName()).append(">>\n");                  //pursues
-//            }
-//
-//        }
-//
-//        dotBuilder.append("</TABLE>>];\n\n");
-
+        
         return null;
     }
 }
