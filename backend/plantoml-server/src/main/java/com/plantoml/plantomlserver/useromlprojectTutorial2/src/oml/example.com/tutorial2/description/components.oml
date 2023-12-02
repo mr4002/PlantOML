@@ -67,15 +67,4 @@ description <http://example.com/tutorial2/description/components#> as components
 		base:hasIdentifier "C.07"
 		base:hasCanonicalName "Lander Ground Data System"
 	]
-	ref instance orbiter-spacecraft [
-		base:contains orbiter-power-subsystem
-		base:contains orbiter-harness
-		base:contains orbiter-thermal-subsystem
-		base:contains orbiter-command-and-data-handling-subsystem
-		base:contains orbiter-telecom-subsystem
-		base:contains orbiter-guidance-navigation-control-subsystem
-		base:contains orbiter-mechanical-subsystem
-		base:contains orbiter-spacraft-flight-software
-		base:contains orbiter-propulsion-subsystem
-	]
 }

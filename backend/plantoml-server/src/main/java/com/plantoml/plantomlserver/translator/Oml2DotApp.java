@@ -49,7 +49,7 @@ public class Oml2DotApp {
         // Write the OML text to a temporary file
         File tempFile = null;
         try {
-            tempFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial2/src/oml/example.com/tutorial2/description/missions.oml");
+            tempFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial2/src/oml/example.com/tutorial2/description/junctions.oml");
             try (FileWriter writer = new FileWriter(tempFile)) {
                 writer.write(omlText);
             }
