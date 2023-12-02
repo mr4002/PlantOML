@@ -1,8 +1,12 @@
 import './App.css';
 import React  from 'react';
 
-const imageRef = React.createRef();
+import { saveAs } from 'file-saver';
+import axios from 'axios';
 
+let zip = require('jszip')();
+const imageRef = React.createRef();
+const url = "http://localhost:8080/plantoml/oml/upload"
 var files;
 function updateImage(string){
   console.log("updateIMAGE");
@@ -27,10 +31,15 @@ const submitFiles = (e) => {
 
 
   const renderOMLDiagram = (files) => {
-    console.log(files);
-    //var imageresult = fetch("localhost:8080/plantoml/oml/~h1423325", {method: "GET"});
-    var imageresult = fakeAPI();
-    updateImage(`data:image/jpeg;base64,${imageresult}`);
+    var folderN = zip.folder("OMLinfo");
+    for(let file = 0; file < files.length; file++){
+        folderN.file(files[file].name, files[file]);
+    }
+   // zip.generateAsync({type: "blob"}).then(content => {
+   //      saveAs(content, "example.zip");
+   // });
+   zip.generateAsync({type: "blob"}).then(content => {
+     axios.post(url, content).then((imageRes) =>  updateImage(`data:image/jpeg;base64,${imageRes}`) );});
   }
 
 
