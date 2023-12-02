@@ -11,13 +11,22 @@ import org.springframework.http.MediaType;
 import org.springframework.http.HttpHeaders;
 
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HexFormat;
 import java.util.Base64;
 import java.util.zip.Inflater;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
+
+import guru.nidi.graphviz.engine.Format;
+import guru.nidi.graphviz.engine.Graphviz;
+import guru.nidi.graphviz.model.MutableGraph;
+import guru.nidi.graphviz.parse.Parser;
+
 
 @RestController
 @RequestMapping("/plantoml/oml")
@@ -74,15 +83,55 @@ public class DiagramController {
         }
     }
 
-    private byte[] sendRequestToGraphviz(String text) {
-        String url = "http://localhost:5001/img"; //flask server URL
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Some-Header", "header-value"); //set any headers
-    
-        HttpEntity<String> entity = new HttpEntity<>(headers);
-        ResponseEntity<byte[]> response = restTemplate.exchange(url, HttpMethod.GET, entity, byte[].class);
-    
-        return response.getBody();
+    //Below generates svg with png file extension causing format to be off, use generateDiagramUsingProcessBuilder instead
+    private byte[] generateDiagramFromDot(String dot) {
+        try {
+            MutableGraph g = new Parser().read(dot);
+            try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+                Graphviz.fromGraph(g).render(Format.PNG).toOutputStream(baos);
+                return baos.toByteArray();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    private byte[] generateDiagramUsingProcessBuilder(String dot) {
+        Path dotFilePath = null;
+        try {
+            //write the DOT string to a temp file
+            dotFilePath = Files.createTempFile("graph", ".dot");
+            Files.writeString(dotFilePath, dot);
+
+            //exe Graphviz process
+            ProcessBuilder processBuilder = new ProcessBuilder("dot", "-Tpng", dotFilePath.toString());
+            Process process = processBuilder.start();
+
+            //process png
+            try (InputStream inputStream = process.getInputStream();
+                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+                byte[] buffer = new byte[8192];
+                int bytesRead;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+                process.waitFor();
+                return outputStream.toByteArray();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (dotFilePath != null) {
+                try {
+                    Files.delete(dotFilePath);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     private byte[] generateDiagramFromOmlText(String omlText) {
@@ -96,12 +145,11 @@ public class DiagramController {
 
         System.out.println("===================== TRANSLATION START ======================");
         String dot = this.oml2DotApp.parse(omlText);
-        System.out.println(dot);
         System.out.println("===================== TRANSLATION END ======================");
 
 
         if (dot != null) {
-            return sendRequestToGraphviz(dot);
+            return generateDiagramUsingProcessBuilder(dot);
         } else  {
             return null;
         }
