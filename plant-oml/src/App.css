@@ -17,11 +17,18 @@
     font-size:14pt;
 }
 
-#buttonid
+.buttonid
 {
-    height:40px;
-    width:60px;
-    font-size:10pt;
+    height:90px;
+    width:350px;
+    font-size:17pt;
+}
+
+.buttonid1
+{
+    height:90px;
+    width:200px;
+    font-size:24pt;
 }
 
 .tabs-container {
