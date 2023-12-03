@@ -1,16 +1,34 @@
 import './App.css';
 import React  from 'react';
-
+import {encode, decode} from 'uint8-to-base64';
 import { saveAs } from 'file-saver';
 import axios from 'axios';
 
 let zip = require('jszip')();
-const imageRef = React.createRef();
+let unzip = require('jszip')();
+const imageRef0 = React.createRef();
+const imageRef1 = React.createRef();
+const imageRef2 = React.createRef();
+const imageRef3 = React.createRef();
+const imageRef4 = React.createRef();
+const imageRefs = [imageRef0, imageRef1, imageRef2, imageRef3, imageRef4];
 const url = "http://localhost:8080/plantoml/oml/upload"
 var files;
-function updateImage(string){
-  console.log("updateIMAGE");
-  imageRef.current.src = string;
+
+function updateImage(zipFile){
+  //`data:image/jpeg;base64,${base64string}`
+  unzip.loadAsync(zipFile).then(result => {
+    var images = result.files
+    console.log(images)
+    
+    Object.keys(images).map((key, index) => {
+      var nameSplice = key.split(".");
+      if(nameSplice[nameSplice.length-1] == "txt"){ 
+        var str = new TextDecoder().decode(images[key]._data.compressedContent);
+        imageRefs[index].current.src = `data:image/jpeg;base64,${str}`
+      }
+    });
+  });;
 }
 
 const fakeAPI = () => {
@@ -21,6 +39,7 @@ const fakeAPI = () => {
 const onFileChange = (event) => {
   console.log(event.target.files)
   files = event.target.files;
+ 
 };
 
 const submitFiles = (e) => {
@@ -35,11 +54,12 @@ const submitFiles = (e) => {
     for(let file = 0; file < files.length; file++){
         folderN.file(files[file].name, files[file]);
     }
-   // zip.generateAsync({type: "blob"}).then(content => {
-   //      saveAs(content, "example.zip");
-   // });
-   zip.generateAsync({type: "blob"}).then(content => {
-     axios.post(url, content).then((imageRes) =>  updateImage(`data:image/jpeg;base64,${imageRes}`) );});
+    zip.generateAsync({type: "blob"}).then(content => {
+        updateImage(content);
+   });
+
+   //zip.generateAsync({type: "blob"}).then(content => {
+    // axios.post(url, content).then((imageRes) =>  updateImage(imageRes) );});
   }
 
 
@@ -51,7 +71,11 @@ function App() {
         <p>
           PlantOML
         </p>
-        <img src='' ref={imageRef} name="imgdisplay" />
+        <img src='' ref={imageRef0} name="imgdisplay" />
+        <img src='' ref={imageRef1} name="imgdisplay" />
+        <img src='' ref={imageRef2} name="imgdisplay" />
+        <img src='' ref={imageRef3} name="imgdisplay" />
+        <img src='' ref={imageRef4} name="imgdisplay" />
         <div class="tab-content">
           <div>
               <label>Upload project folder: </label>
