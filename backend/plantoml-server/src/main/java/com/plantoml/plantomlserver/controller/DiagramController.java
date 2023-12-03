@@ -11,13 +11,20 @@ import org.springframework.http.MediaType;
 import org.springframework.http.HttpHeaders;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.HexFormat;
 import java.util.Base64;
+import java.util.Map;
 import java.util.zip.Inflater;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
@@ -26,6 +33,7 @@ import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
 import guru.nidi.graphviz.model.MutableGraph;
 import guru.nidi.graphviz.parse.Parser;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @RestController
@@ -42,6 +50,48 @@ public class DiagramController {
     public DiagramController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
         this.oml2DotApp = new Oml2DotApp();
+    }
+
+    @PostMapping("/upload")
+    public ResponseEntity<?> uploadOmlProject(@RequestParam("file") MultipartFile file) {
+        if (file.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("File is empty");
+        }
+
+        try {
+            Path tempDir = Files.createTempDirectory("oml-project-");
+            Path zipFilePath = tempDir.resolve(file.getOriginalFilename());
+            file.transferTo(zipFilePath.toFile());
+
+            // Extract the ZIP file
+            extractZipFile(zipFilePath, tempDir);
+
+            // Process each OML file and generate diagrams
+            Map<String, byte[]> diagrams = new HashMap<>();
+            Files.walk(tempDir)
+                    .filter(path -> path.toString().endsWith(".oml") && !path.toString().contains("/build/") && !path.toString().contains("/vocabulary/"))
+                    .forEach(omlFilePath -> {
+                        byte[] imageBytes = generateDiagramFromOmlFile(omlFilePath);
+                        if (imageBytes != null) {
+                            diagrams.put(omlFilePath.getFileName().toString().replace(".oml", ".png"), imageBytes);
+                        }
+                    });
+
+            // Bundle the images into a single ZIP file
+            Path outputZip = bundleDiagramsIntoZip(diagrams, tempDir);
+
+            // Return the ZIP file
+            byte[] zipBytes = Files.readAllBytes(outputZip);
+
+            // Clean up
+            deleteDirectory(tempDir);
+
+            return ResponseEntity.ok().contentType(MediaType.APPLICATION_OCTET_STREAM).body(zipBytes);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing file");
+        }
     }
 
     @GetMapping("/{textEncoding}")
@@ -63,7 +113,7 @@ public class DiagramController {
             }
 
             //gen png from decoded text
-            byte[] imageBytes = generateDiagramFromOmlText(decodedText); //TODO: replace with img generator
+            byte[] imageBytes = null;//generateDiagramFromOmlText(decodedText);
 
             //return img in responseentity
             return ResponseEntity
@@ -134,26 +184,17 @@ public class DiagramController {
         }
     }
 
-    private byte[] generateDiagramFromOmlText(String omlText) {
-        //TODO: decode OML into AST then go from AST to Dot here
-
-        System.out.println("===================== OML TEXT START ======================");
-        System.out.println(omlText);
-        System.out.println("===================== OML TEXT END ======================");
-
-
-
-        System.out.println("===================== TRANSLATION START ======================");
-        String dot = this.oml2DotApp.parse(omlText);
-        System.out.println("===================== TRANSLATION END ======================");
-
-
-        if (dot != null) {
-            return generateDiagramUsingProcessBuilder(dot);
-        } else  {
-            return null;
-        }
-    }
+//    private byte[] generateDiagramFromOmlText(String omlText) {
+//        System.out.println("===================== TRANSLATION START ======================");
+//        String dot = oml2DotApp.parse(omlText);
+//        System.out.println("===================== TRANSLATION END ======================");
+//
+//        if (dot != null) {
+//            return generateDiagramUsingProcessBuilder(dot);
+//        } else  {
+//            return null;
+//        }
+//    }
 
     private byte[] decompressDeflate(byte[] compressedBytes) throws Exception {
         Inflater inflater = new Inflater();
@@ -180,5 +221,64 @@ public class DiagramController {
                 .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
                 .toString();
         return BASE64_DECODER.decode(base64);
+    }
+
+
+    public void extractZipFile(Path zipFilePath, Path destDir) throws IOException {
+        try (ZipInputStream zipIn = new ZipInputStream(Files.newInputStream(zipFilePath))) {
+            ZipEntry entry;
+            while ((entry = zipIn.getNextEntry()) != null) {
+                Path filePath = destDir.resolve(entry.getName());
+                if (!entry.isDirectory()) {
+                    extractFile(zipIn, filePath);
+                } else {
+                    Files.createDirectories(filePath);
+                }
+                zipIn.closeEntry();
+            }
+        }
+    }
+
+    private void extractFile(ZipInputStream zipIn, Path filePath) throws IOException {
+        Files.createDirectories(filePath.getParent());
+        Files.copy(zipIn, filePath);
+    }
+
+    private void deleteDirectory(Path path) throws IOException {
+        if (Files.isDirectory(path)) {
+            try (DirectoryStream<Path> entries = Files.newDirectoryStream(path)) {
+                for (Path entry : entries) {
+                    deleteDirectory(entry);
+                }
+            }
+        }
+        Files.delete(path);
+    }
+
+    private Path bundleDiagramsIntoZip(Map<String, byte[]> diagrams, Path tempDir) throws IOException {
+        Path zipPath = tempDir.resolve("diagrams.zip");
+        try (ZipOutputStream zos = new ZipOutputStream(Files.newOutputStream(zipPath))) {
+            for (Map.Entry<String, byte[]> entry : diagrams.entrySet()) {
+                ZipEntry zipEntry = new ZipEntry(entry.getKey());
+                zos.putNextEntry(zipEntry);
+                zos.write(entry.getValue());
+                zos.closeEntry();
+            }
+        }
+        return zipPath;
+    }
+
+    private byte[] generateDiagramFromOmlFile(Path omlFilePath) {
+        try {
+            String dot = oml2DotApp.parse(omlFilePath);
+            if (dot != null) {
+                return generateDiagramUsingProcessBuilder(dot);
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+//            System.out.println(e);
+            return null;
+        }
     }
 }

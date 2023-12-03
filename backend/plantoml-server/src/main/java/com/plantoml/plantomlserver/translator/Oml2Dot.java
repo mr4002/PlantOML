@@ -197,8 +197,4 @@ public class Oml2Dot extends OmlSwitch<Void> {
 
         return null;
     }
-
-
-
-
 }
