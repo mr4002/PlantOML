@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FileTree from './components/FileTree';
 import MonacoEditor from 'react-monaco-editor';
+import OptionsComponent from './components/Options';
 import { Resizable } from 're-resizable';
 import JSZip from 'jszip';
 
@@ -119,6 +120,11 @@ function App() {
     };
 
     const handleSubmit = async () => {
+        //handle null options
+        var selectElements = document.querySelectorAll('select');
+
+        
+
         const zip = new JSZip();
     
         // Recursively add files to the zip
@@ -138,6 +144,15 @@ function App() {
             const zipBlob = await zip.generateAsync({ type: 'blob' });
             const formData = new FormData();
             formData.append('file', zipBlob, 'project.zip');
+            for (var i = 0; i < selectElements.length; i++) {
+                var currentValue = selectElements[i].value;
+                if (currentValue != '') {
+                    console.log(selectElements[i].name)
+                    console.log(selectElements[i].value)
+                    formData.append(selectElements[i].name, selectElements[i].value)
+                }
+            }
+            console.log(formData.getAll('nodeColor'))
     
             const response = await fetch('http://localhost:8080/plantoml/oml/upload', { //TODO:replace this with public ipv4 of ec2 instance
                 method: 'POST',
@@ -238,6 +253,7 @@ function App() {
                 </div>
             </div>
             <div className="toolbar">
+                <OptionsComponent/>
                 <button onClick={handleSubmit}>Submit</button>
             </div>
         </div>
