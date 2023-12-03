@@ -54,12 +54,12 @@ const submitFiles = (e) => {
     for(let file = 0; file < files.length; file++){
         folderN.file(files[file].name, files[file]);
     }
-    zip.generateAsync({type: "blob"}).then(content => {
-        updateImage(content);
-   });
+    //zip.generateAsync({type: "blob"}).then(content => {
+      //  updateImage(content);
+  // });
 
-   //zip.generateAsync({type: "blob"}).then(content => {
-    // axios.post(url, content).then((imageRes) =>  updateImage(imageRes) );});
+   zip.generateAsync({type: "blob"}).then(content => {
+     axios.post(url, content).then((imageRes) =>  updateImage(imageRes) );});
   }
 
 
