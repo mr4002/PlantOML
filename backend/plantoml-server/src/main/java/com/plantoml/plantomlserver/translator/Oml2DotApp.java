@@ -49,13 +49,15 @@ public class Oml2DotApp {
         // Write the OML text to a temporary file
         File tempFile = null;
         try {
-            tempFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial2/src/oml/example.com/tutorial2/description/junctions.oml");
+            tempFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial1/src/oml/example.com/tutorial1/description/restaurant.oml");
+            // tempFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial2/src/oml/example.com/tutorial2/description/junctions.oml");
             try (FileWriter writer = new FileWriter(tempFile)) {
                 writer.write(omlText);
             }
 
             try {
-                final File inputCatalogFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial2/catalog.xml");
+                final File inputCatalogFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial1/catalog.xml");
+                // final File inputCatalogFile = new File(System.getProperty("user.dir") + "/src/main/java/com/plantoml/plantomlserver/useromlprojectTutorial2/catalog.xml");
                 final OmlCatalog inputCatalog = OmlCatalog.create(URI.createFileURI(inputCatalogFile.toString()));
                 LOGGER.info("Catalog file loaded successfully. Resolved URIs:");
                 for (URI uri : inputCatalog.getResolvedUris()) {
@@ -68,8 +70,9 @@ public class Oml2DotApp {
             // Now load the resource from the file
             Resource resource = resourceSet.createResource(URI.createFileURI(tempFile.getAbsolutePath()));
             resource.load(null);
+            LOGGER.info("Loaded ontologies:");
             for (Ontology o : OmlRead.getImportedOntologyClosure(OmlRead.getOntology(resource), false)) {
-                System.out.println(o.toString());
+                LOGGER.info(o.getNamespace() + " as " + o.getPrefix());
             }
             
             // perform validation
@@ -101,45 +104,16 @@ public class Oml2DotApp {
             }
         }
     }
-//        // convert the string into an InputStream for EMF to process
-//        ByteArrayInputStream inStream = new ByteArrayInputStream(omlText.getBytes(StandardCharsets.UTF_8));
-//        // create a resource and load the OML text from the InputStream
-//        Resource resource = resourceSet.createResource(URI.createURI("dummy:/example.oml"));
-//        try {
-//            resource.load(inStream, Collections.emptyMap());
-//            LOGGER.info("Resource loaded: " + resource.toString());
-//
-//            //TODO: figure out why validation always fails
-//            // perform validation if necessary
-////            String validationResults = OmlValidator.validate(resource);
-////            if (!validationResults.isEmpty()) {
-////                LOGGER.error("Validation errors in resource: " + validationResults);
-////                throw new IllegalStateException("Validation errors: " + validationResults);
-////            }
-//
-//            // traverse the resource and convert to DOT format
-//            String dotRepresentation = convertToDot(resource);
-//            LOGGER.info("Converted OML to DOT format: ");
-//            LOGGER.info( dotRepresentation);
-//
-//            LOGGER.info("=================================================================");
-//            LOGGER.info("                          E N D ");
-//            LOGGER.info("                        Oml to Dot");
-//            LOGGER.info("=================================================================");
-//
-//            return dotRepresentation; //on success
-//
-//        } catch (Exception e) {
-//            LOGGER.error("Error parsing OML text: " + e.getMessage(), e);
-//        }
-//
-//        return null; //on error/failure
-//    }
 
     private String convertToDot(Resource resource) {
         Oml2Dot oml2Dot = new Oml2Dot();
         return oml2Dot.convert(resource);
     }
+
+    // private byte[] convertToImage(Resource resource) {
+    //     Oml2Dot oml2Dot = new Oml2Dot();
+    //     return oml2Dot.convert(resource);
+    // }
 
     private class ECrossReferenceAdapterEx extends ECrossReferenceAdapter {
 
