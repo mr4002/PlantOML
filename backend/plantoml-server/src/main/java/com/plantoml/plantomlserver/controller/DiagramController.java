@@ -56,7 +56,7 @@ public class DiagramController {
         @RequestParam(required = false) String graphBgColor,
         @RequestParam(required = false) String dpi
     ) {
-
+        this.options = new ArrayList<>();
         if (nodeShape != null && !nodeShape.isEmpty()) {
             this.options.add("-Nshape=" + nodeShape);
         }
@@ -70,7 +70,7 @@ public class DiagramController {
             this.options.add("-Estyle=" + edgeStyle);
         }
         if (graphLayout != null && !graphLayout.isEmpty()) {
-            options.add("-K=" + graphLayout);
+            this.options.add("-K=" + graphLayout);
         }
         if (graphBgColor != null && !graphBgColor.isEmpty()) {
             this.options.add("-Gbgcolor=" + graphBgColor);
