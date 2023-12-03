@@ -35,7 +35,7 @@ import guru.nidi.graphviz.model.MutableGraph;
 import guru.nidi.graphviz.parse.Parser;
 import org.springframework.web.multipart.MultipartFile;
 
-
+@CrossOrigin(origins = "http://localhost:3000") // Allow only a specific origin
 @RestController
 @RequestMapping("/plantoml/oml")
 public class DiagramController {
@@ -54,6 +54,7 @@ public class DiagramController {
 
     @PostMapping("/upload")
     public ResponseEntity<?> uploadOmlProject(@RequestParam("file") MultipartFile file) {
+        System.out.println("HERE");
         if (file.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("File is empty");
         }

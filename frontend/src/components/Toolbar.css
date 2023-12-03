@@ -1,0 +1,16 @@
+.toolbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: right;
+}
+
+.toolbar button {
+    padding: 8px 15px;
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
