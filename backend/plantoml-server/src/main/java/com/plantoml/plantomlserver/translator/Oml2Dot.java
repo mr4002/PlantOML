@@ -11,6 +11,7 @@ import io.opencaesar.oml.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
+import guru.nidi.graphviz.attribute.Arrow;
 import guru.nidi.graphviz.attribute.Label;
 import guru.nidi.graphviz.attribute.Rank;
 import guru.nidi.graphviz.attribute.Shape;
@@ -44,7 +45,6 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
             .graphAttr().with(Rank.dir(RankDir.BOTTOM_TO_TOP))
             .nodeAttr().with(Shape.PLAIN_TEXT);
 
-
         // traverse all elements in the resource
         Iterable<EObject> iterable = () -> inputResource.getAllContents();
         StreamSupport.stream(iterable.spliterator(), false)
@@ -70,56 +70,139 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
         }
     }
 
+    /////////////////////////
+    // OmlSwitch Overrides //
+    /////////////////////////
+
     @Override
-    public Boolean caseAspect(final Aspect aspect) {
-        List<String> header = new ArrayList<>();
-        for (Term c : OmlSearch.findSuperTerms(aspect)) {
-            header.add("«" + c.getAbbreviatedIri() + "»");
+    public Boolean caseClassifier(Classifier classifier) {
+        Set<Term> supers = OmlSearch.findSpecializationSuperTerms(classifier);
+        classifier = classifier.isRef() ? (Classifier) classifier.getRef() : classifier;
+        if (!edges.containsKey(classifier.getName()) && !supers.isEmpty()) {
+            edges.put(classifier.getName(), new ArrayList<>());
         }
-        header.add(aspect.getName());
+        for (Term t : supers) {
+            Classifier c = (Classifier) t;
+            // ideally I wouldn't make a new node but there's no guarantee that the c node exists yet
+            Link edge = to(node(c.getName()));
+            edge = edge.with(Arrow.EMPTY);
+            edges.get(classifier.getName()).add(edge);
 
-        List<String> members = handleKeyAxioms(aspect);
-        members.addAll(handlePropertyRestrictionAxioms(aspect));
-
-        Node instNode = tableNode("lightgrey", aspect.getName(), header, members);
-        nodes.put(aspect.getName(), instNode);
+            // check if c comes from outside and needs a node
+            if (c.getOntology() != classifier.getOntology() && !nodes.containsKey(c.getName())) {
+                List<String> otherHeader = new ArrayList<>();
+                if (c instanceof Structure) {
+                    otherHeader.add("«structure»");
+                } else if (c instanceof Aspect) {
+                    otherHeader.add("«aspect»");
+                } else if (c instanceof Concept) {
+                    otherHeader.add("«concept»");
+                } else { // must be a relation entity
+                    otherHeader.add("«relation entity»");
+                }
+                otherHeader.add(c.getName());
+                // just pick a default color
+                nodes.put(c.getName(), tableNode("#97E87F", c.getName(), otherHeader, null));
+            }
+        }
         return true;
     }
 
     @Override
-    public Boolean caseConcept(final Concept concept) {
-        List<String> header = new ArrayList<>();
-        for (Term c : OmlSearch.findSuperTerms(concept)) {
-            header.add("«" + c.getAbbreviatedIri() + "»");
+    public Boolean caseAspect(Aspect aspect) {
+        Ontology ontology = aspect.getOntology();
+        // find the original
+        aspect = aspect.isRef() ? aspect.getRef() : aspect;
+        // only add the node if it does not yet exist
+        if (!nodes.containsKey(aspect.getName())) {
+            // need all members from every ref in this ontology
+            List<String> members = new ArrayList<>();
+            if (aspect.getOntology() == ontology) {
+                members.addAll(handleKeyAxioms(aspect));
+                members.addAll(handlePropertyRestrictionAxioms(aspect));
+            }
+            for (Member m : OmlSearch.findRefs(aspect)) {
+                if (m.getOntology() != ontology) continue;
+                Aspect c = (Aspect) m;
+                members.addAll(handleKeyAxioms(c));
+                members.addAll(handlePropertyRestrictionAxioms(c));
+            }
+            // the header is generic
+            List<String> header = new ArrayList<>();
+            header.add("«aspect»");
+            header.add(aspect.getName());
+            Node instNode = tableNode("lightgrey", aspect.getName(), header, members);
+            nodes.put(aspect.getName(), instNode);
         }
-        header.add(concept.getName());
+        return null; // intentionally let OmlSwitch call caseClassifier
+    }
 
-        handleInstanceEnumerationAxiom(concept);
-        List<String> members = handleKeyAxioms(concept);
-        members.addAll(handlePropertyRestrictionAxioms(concept));
+    @Override
+    public Boolean caseConcept(Concept concept) {
+        Ontology ontology = concept.getOntology();
+        // find the original
+        concept = concept.isRef() ? concept.getRef() : concept;
+        // only add the node if it does not yet exist
+        if (!nodes.containsKey(concept.getName())) {
+            // need all members from every ref in this ontology
+            List<String> members = new ArrayList<>();
+            if (concept.getOntology() == ontology) {
+                handleInstanceEnumerationAxiom(concept);
+                members.addAll(handleKeyAxioms(concept));
+                members.addAll(handlePropertyRestrictionAxioms(concept));
+            }
+            for (Member m : OmlSearch.findRefs(concept)) {
+                if (m.getOntology() != ontology) continue;
+                Concept c = (Concept) m;
+                handleInstanceEnumerationAxiom(c);
+                members.addAll(handleKeyAxioms(c));
+                members.addAll(handlePropertyRestrictionAxioms(c));
+            }
+            // the header is generic
+            List<String> header = new ArrayList<>();
+            header.add("«concept»");
+            header.add(concept.getName());
+            Node instNode = tableNode("lightgrey", concept.getName(), header, members);
+            nodes.put(concept.getName(), instNode);
+        }
+        return null; // intentionally let OmlSwitch call caseClassifier
+    }
 
-        Node instNode = tableNode("lightgrey", concept.getName(), header, members);
-        nodes.put(concept.getName(), instNode);
-        return true;
+    public Boolean caseStructure(Structure structure) {
+        // TODO
+        return null; // intentionally let OmlSwitch call caseClassifier
     }
 
     @Override
     public Boolean caseRelationEntity(RelationEntity relation) {
-        List<String> header = new ArrayList<>();
-        for (Term c : OmlSearch.findSuperTerms(relation)) {
-            header.add("«" + c.getAbbreviatedIri() + "»");
+
+        // TODO edges for to and from relationships
+
+        Ontology ontology = relation.getOntology();
+        // find the original
+        relation = relation.isRef() ? relation.getRef() : relation;
+        // only add the node if it does not yet exist
+        if (!nodes.containsKey(relation.getName())) {
+            // need all members from every ref in this ontology
+            List<String> members = new ArrayList<>();
+            if (relation.getOntology() == ontology) {
+                members.addAll(handleKeyAxioms(relation));
+                members.addAll(handlePropertyRestrictionAxioms(relation));
+            }
+            for (Member m : OmlSearch.findRefs(relation)) {
+                if (m.getOntology() != ontology) continue;
+                RelationEntity c = (RelationEntity) m;
+                members.addAll(handleKeyAxioms(c));
+                members.addAll(handlePropertyRestrictionAxioms(c));
+            }
+            // the header is generic
+            List<String> header = new ArrayList<>();
+            header.add("«relation entity»");
+            header.add(relation.getName());
+            Node instNode = tableNode("lightgrey", relation.getName(), header, members);
+            nodes.put(relation.getName(), instNode);
         }
-        header.add(relation.getName());
-
-        List<String> members = handleKeyAxioms(relation);
-        members.addAll(handlePropertyRestrictionAxioms(relation));
-
-        // TODO to and from 
-
-        Node instNode = tableNode("lightgrey", relation.getName(), header, members);
-        nodes.put(relation.getName(), instNode);
-
-        return true;
+        return null; // intentionally let OmlSwitch call caseClassifier
     }
 
     @Override
@@ -130,7 +213,7 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
 //          mission:pursues objectives:characterize-environment
 //          mission:pursues objectives:characterize-gravitational-field
 //      ]
-    public Boolean caseConceptInstance(final ConceptInstance instance) {
+    public Boolean caseConceptInstance(ConceptInstance instance) {
         List<String> header = new ArrayList<>();
         for (Classifier c : OmlSearch.findTypes(instance)) {
             header.add("«" + c.getAbbreviatedIri() + "»");
@@ -161,11 +244,11 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
         List<String> members = handlePropertyValueAssertions(instance);
 
         for (NamedInstance objectSource: instance.getSources()) {
-            linkToNamedInstance(instance, objectSource, Label.of("«from»"));
+            linkNamedInstances(instance, objectSource, Label.of("«from»"));
         }
 
         for (NamedInstance objectTarget : instance.getTargets()) {              
-            linkToNamedInstance(instance, objectTarget, Label.of("«to»"));
+            linkNamedInstances(instance, objectTarget, Label.of("«to»"));
         }
 
         Node instNode = tableNode("lightgrey", instance.getName(), header, members);
@@ -173,7 +256,62 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
         return true;
     }
 
-    // helper function to make a green box node for nodes that come from other files
+    public Boolean caseStructureInstance(StructureInstance instance) {
+        // TODO
+        return null;
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    // Handlers For Grammar Nodes That Do Not Really Work In An Override //
+    ///////////////////////////////////////////////////////////////////////
+
+    private void handleInstanceEnumerationAxiom(Concept concept) {
+        // TODO
+    }
+
+    private List<String> handleKeyAxioms(Entity entity) {
+        // TODO
+        return new ArrayList<>();
+    }
+
+    private List<String> handlePropertyRestrictionAxioms(Classifier classifier) {
+        // TODO
+        return new ArrayList<>();
+    }
+
+    // handles all properties of an instance
+    private List<String> handlePropertyValueAssertions(Instance in) {
+        if (in instanceof NamedInstance) {
+            NamedInstance instance = (NamedInstance) in;
+            List<String> literals = new ArrayList<>();
+            Set<PropertyValueAssertion> pvas = OmlSearch.findPropertyValueAssertionsWithSubject(instance);
+            if (!edges.containsKey(instance.getName()) && !pvas.isEmpty()) {
+                edges.put(instance.getName(), new ArrayList<>());
+            }
+            for (PropertyValueAssertion pva : pvas) {
+                Literal literal = pva.getLiteralValue();
+                StructureInstance struct = pva.getContainedValue();
+                if (literal != null) { // literal values belong in the table
+                    literals.add(pva.getProperty().getAbbreviatedIri() + " : " + literal.getStringValue());
+                } else if (struct != null) { // structure values belong outside the table
+                    // TODO
+                } else { // reference values belong outside the table
+                    linkNamedInstances(instance, pva.getReferencedValue(), Label.of("«" + pva.getProperty().getName() + "»"));
+                }
+            }
+            return literals;
+        }
+        return null;
+    }
+
+    //////////////////////
+    // Helper Functions //
+    //////////////////////
+
+    // helper function to make node that is a box
+    // color applies to the background of the header
+    // header(s) are not separated by solid lines
+    // members(s) have white background and are separated by solid lines
     private Node tableNode(String color, String name, List<String> headers, List<String> members) {
         // I wanted to use a DOT Record to build the table
         // but I couldn't find out how to get the formatting right
@@ -206,47 +344,8 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
         return instNode;
     }
 
-    private void handleInstanceEnumerationAxiom(Concept concept) {
-        // TODO
-    }
-
-    private List<String> handleKeyAxioms(Entity entity) {
-        // TODO
-        return null;
-    }
-
-    private List<String> handlePropertyRestrictionAxioms(Classifier classifier) {
-        // TODO
-        return null;
-    }
-
-    // handles all properties of an instance
-    private List<String> handlePropertyValueAssertions(Instance in) {
-        if (in instanceof NamedInstance) {
-            NamedInstance instance = (NamedInstance) in;
-            List<String> literals = new ArrayList<>();
-            Set<PropertyValueAssertion> pvas = OmlSearch.findPropertyValueAssertionsWithSubject(instance);
-            if (!pvas.isEmpty()) {
-                edges.put(instance.getName(), new ArrayList<>());
-            }
-            for (PropertyValueAssertion pva : pvas) {
-                Literal literal = pva.getLiteralValue();
-                StructureInstance struct = pva.getContainedValue();
-                if (literal != null) { // literal values belong in the table
-                    literals.add(pva.getProperty().getAbbreviatedIri() + " : " + literal.getStringValue());
-                } else if (struct != null) { // structure values belong outside the table
-                    // TODO
-                } else { // reference values belong outside the table
-                    linkToNamedInstance(instance, pva.getReferencedValue(), Label.of("«" + pva.getProperty().getName() + "»"));
-                }
-            }
-            return literals;
-        }
-        return null;
-    }
-
-    // creates a link to from a source
-    private void linkToNamedInstance(NamedInstance src, NamedInstance dst, Label label) {
+    // creates a link between named instances
+    private void linkNamedInstances(NamedInstance src, NamedInstance dst, Label label) {
         // ideally I wouldn't make a new node but there's no guarantee that the dst node exists yet
         Link edge = to(node(dst.getName()));
 
@@ -272,7 +371,7 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
     private String xmlEscape(String original) {
         return original
             .replace("&", "&amp;")
-            // .replace("'", "&apos") // not mentioned on graphviz website
+            // .replace("'", "&apos;") // not mentioned on graphviz website
             .replace("\"", "&quot;")
             .replace("<", "&lt;")
             .replace(">", "&gt;");
