@@ -126,7 +126,7 @@ public class Oml2Dot extends OmlSwitch<Void> {
 
         Node instNode = node(instance.getName());
         instNode = instNode.with(Shape.RECORD);
-        instNode = instNode.with(Label.of(table.toString()));
+        instNode = instNode.with(Label.raw(table.toString()));
         nodes.put(instance.getName(), instNode);
         return null;
     }
@@ -236,7 +236,7 @@ public class Oml2Dot extends OmlSwitch<Void> {
 
         Node instNode = node(instance.getName());
         instNode = instNode.with(Shape.RECORD);
-        instNode = instNode.with(Label.of(table.toString()));
+        instNode = instNode.with(Label.raw(table.toString()));
         return instNode;
     }
 
