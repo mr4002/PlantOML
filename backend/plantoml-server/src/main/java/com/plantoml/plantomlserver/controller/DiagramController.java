@@ -111,7 +111,7 @@ public class DiagramController {
 
             //process png
             try (InputStream inputStream = process.getInputStream();
-                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
                 byte[] buffer = new byte[8192];
                 int bytesRead;
                 while ((bytesRead = inputStream.read(buffer)) != -1) {
@@ -150,7 +150,7 @@ public class DiagramController {
 
         if (dot != null) {
             return generateDiagramUsingProcessBuilder(dot);
-        } else  {
+        } else {
             return null;
         }
     }
