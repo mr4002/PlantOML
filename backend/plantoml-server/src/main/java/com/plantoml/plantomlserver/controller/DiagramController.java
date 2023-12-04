@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.HexFormat;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Map;
 import java.util.zip.Inflater;
@@ -45,6 +46,7 @@ public class DiagramController {
     private final RestTemplate restTemplate;
 
     private Oml2DotApp oml2DotApp;
+    private ArrayList<String> options;
 
     @Autowired
     public DiagramController(RestTemplate restTemplate) {
@@ -96,7 +98,37 @@ public class DiagramController {
     }
 
     @GetMapping("/{textEncoding}")
-    public ResponseEntity<byte[]> getDiagram(@PathVariable String textEncoding) {
+    public ResponseEntity<byte[]> getDiagram(@PathVariable String textEncoding,
+        @RequestParam(required = false) String nodeShape,
+        @RequestParam(required = false) String nodeColor,
+        @RequestParam(required = false) String edgeColor,
+        @RequestParam(required = false) String edgeStyle,
+        @RequestParam(required = false) String graphLayout,
+        @RequestParam(required = false) String graphBgColor,
+        @RequestParam(required = false) String dpi
+    ) {
+        this.options = new ArrayList<>();
+        if (nodeShape != null && !nodeShape.isEmpty()) {
+            this.options.add("-Nshape=" + nodeShape);
+        }
+        if (nodeColor != null && !nodeColor.isEmpty()) {
+            this.options.add("-Ncolor=" + nodeColor);
+        }
+        if (edgeColor != null && !edgeColor.isEmpty()) {
+            this.options.add("-Ecolor=" + edgeColor);
+        }
+        if (edgeStyle != null && !edgeStyle.isEmpty()) {
+            this.options.add("-Estyle=" + edgeStyle);
+        }
+        if (graphLayout != null && !graphLayout.isEmpty()) {
+            this.options.add("-K=" + graphLayout);
+        }
+        if (graphBgColor != null && !graphBgColor.isEmpty()) {
+            this.options.add("-Gbgcolor=" + graphBgColor);
+        }
+        if (dpi != null && !dpi.isEmpty()) {
+            this.options.add("-Gdpi=" + dpi);
+        }
 
         try {
             String decodedText;
@@ -157,12 +189,21 @@ public class DiagramController {
             Files.writeString(dotFilePath, dot);
 
             //exe Graphviz process
+            //build command
+            ArrayList<String> command = new ArrayList<String>();
+            command.add("dot");
+            if (this.options != null) {
+                command.addAll(options);
+            }
+            command.add("-Tpng");
+            command.add(dotFilePath.toString());
+
             ProcessBuilder processBuilder = new ProcessBuilder("dot", "-Tpng", dotFilePath.toString());
             Process process = processBuilder.start();
 
             //process png
             try (InputStream inputStream = process.getInputStream();
-                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
                 byte[] buffer = new byte[8192];
                 int bytesRead;
                 while ((bytesRead = inputStream.read(buffer)) != -1) {

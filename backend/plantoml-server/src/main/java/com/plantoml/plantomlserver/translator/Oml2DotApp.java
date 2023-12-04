@@ -77,6 +77,11 @@ public class Oml2DotApp {
         return oml2Dot.convert(resource);
     }
 
+    // private byte[] convertToImage(Resource resource) {
+    //     Oml2Dot oml2Dot = new Oml2Dot();
+    //     return oml2Dot.convert(resource);
+    // }
+
     private class ECrossReferenceAdapterEx extends ECrossReferenceAdapter {
 
         private Set<Resource> allResources = Collections.emptySet();
