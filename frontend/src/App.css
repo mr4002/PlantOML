@@ -1,21 +1,6 @@
-
-.container {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+.content{
+  flex-direction: row;
+  margin-left: 10%; 
+  padding-left: 30px; 
+  padding-right: 20px;
 }
-
-.file-tree {
-  overflow-y: auto;
-  height: 100%;
-  border-right: 1px solid #ccc; 
-}
-
-.editor {
-  flex-grow: 1;
-  overflow-y: auto;
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-}
-
