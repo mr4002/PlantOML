@@ -72,7 +72,7 @@ public class DiagramController {
             // Process each OML file and generate diagrams
             Map<String, byte[]> diagrams = new HashMap<>();
             Files.walk(tempDir)
-                    .filter(path -> path.toString().endsWith(".oml") && !path.toString().contains("/build/") && !path.toString().contains("/vocabulary/"))
+                    .filter(path -> path.toString().endsWith(".oml") && !path.toString().contains("build"))
                     .forEach(omlFilePath -> {
                         byte[] imageBytes = generateDiagramFromOmlFile(omlFilePath);
                         if (imageBytes != null) {
