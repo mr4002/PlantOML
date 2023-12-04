@@ -26,7 +26,7 @@
       "editor/title": [
           {
               "command": "plantoml-extension.previewOMLDiagram",
-              "when": "true",
+              "when": "resourceExtname == .oml",
               "group": "navigation"
           }
       ]
