@@ -10,8 +10,14 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD:plant-oml/package.json
+    "babel": "^6.23.0",
+    "buffer": "^6.0.3",
+    "mocha": "^10.2.0",
+=======
     "jszip": "^3.10.1",
     "re-resizable": "^6.9.11",
+>>>>>>> 9f16c6d02ed0dfc3131dbd2f5e05d8f937bf34bb:frontend/package.json
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-monaco-editor": "^0.54.0",
@@ -22,10 +28,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "mocha",
     "eject": "react-scripts eject"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +55,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.5",
+    "@babel/register": "^7.22.15",
+    "babel-plugin-inline-react-svg": "^2.0.2"
   }
 }
