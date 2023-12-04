@@ -4,7 +4,7 @@ import './Options.css'
 const OptionsComponent = () => {
   return (
     <div className='flexbox'>
-        <label class="label">
+        <label className="label">
             Node Shape:
         </label>
         <select name="nodeShape">
