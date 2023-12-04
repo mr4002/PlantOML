@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  flex-grow: 1; 
+  padding: 10px 10px; 
+}
+
+.file-tree, .file-tree * {
+  padding: 0;
+}
