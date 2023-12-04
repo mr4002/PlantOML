@@ -135,7 +135,7 @@ function Server() {
         };
     
         // Create a copy of the files state
-        const fileTreeCopy = JSON.parse(JSON.stringify(files));
+        const fileTreeCopy = deepCopyFileTree(files);
     
         // Update the file in the copied file tree
         updateFileInTree({ children: fileTreeCopy }, currentFile, newValue);
