@@ -77,7 +77,7 @@ public class DiagramController {
             this.options.add("-Estyle=" + edgeStyle);
         }
         if (graphLayout != null && !graphLayout.isEmpty()) {
-            this.options.add("-K=" + graphLayout);
+            this.options.add("-K" + graphLayout);
         }
         if (graphBgColor != null && !graphBgColor.isEmpty()) {
             this.options.add("-Gbgcolor=" + graphBgColor);
