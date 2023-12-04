@@ -42,12 +42,13 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
     }
 
     public String convert(Resource inputResource) {
+        System.out.println(inputResource.getURI().toFileString());
         // initialize the DOT graph (TODO: what is graph structure going to look like???)
         dot = graph("omldiagram")
-            .directed()
-        // TODO maybe allow these to be customized from the frontend
-            .graphAttr().with(Rank.dir(RankDir.BOTTOM_TO_TOP), GraphAttr.splines(SplineMode.SPLINE))
-            .nodeAttr().with(Shape.PLAIN_TEXT);
+                .directed()
+                // TODO maybe allow these to be customized from the frontend
+                .graphAttr().with(Rank.dir(RankDir.BOTTOM_TO_TOP), GraphAttr.splines(SplineMode.SPLINE))
+                .nodeAttr().with(Shape.PLAIN_TEXT);
 
         // traverse all elements in the resource
         Iterable<EObject> iterable = () -> inputResource.getAllContents();
@@ -80,8 +81,8 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
 
     @Override
     public Boolean caseClassifier(Classifier classifier) {
+        if (classifier.isRef()) return true;
         Set<Term> supers = OmlSearch.findSpecializationSuperTerms(classifier);
-        classifier = classifier.isRef() ? (Classifier) classifier.getRef() : classifier;
         for (Term t : supers) {
             linkMembers(classifier, t, Arrow.EMPTY);
         }
@@ -90,9 +91,8 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
 
     @Override
     public Boolean caseAspect(Aspect aspect) {
+        if (aspect.isRef()) return true;
         Ontology ontology = aspect.getOntology();
-        // find the original
-        aspect = aspect.isRef() ? aspect.getRef() : aspect;
         // only add the node if it does not yet exist
         if (!nodes.containsKey(aspect.getName())) {
             // need all members from every ref in this ontology
@@ -118,9 +118,8 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
 
     @Override
     public Boolean caseConcept(Concept concept) {
+        if (concept.isRef()) return true;
         Ontology ontology = concept.getOntology();
-        // find the original
-        concept = concept.isRef() ? concept.getRef() : concept;
         // only add the node if it does not yet exist
         if (!nodes.containsKey(concept.getName())) {
             // need all members from every ref in this ontology
@@ -153,22 +152,15 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
 
     @Override
     public Boolean caseRelationEntity(RelationEntity relation) {
+        if (relation.isRef()) return true;
         List<Entity> sources = relation.getSources();
         List<Entity> targets = relation.getTargets();
         Ontology ontology = relation.getOntology();
 
-        String forward = null;
-        if (relation.getForwardRelation() != null) {
-            forward = relation.getForwardRelation().getName();
-        }
-
-        // dereference to get the original relation
-        relation = relation.isRef() ? relation.getRef() : relation;
-
         // find a suitable edge label
-        String edgeName = forward; // possibly a reference
-        if (edgeName == null && relation.getForwardRelation() != null) {
-            edgeName = relation.getForwardRelation().getName(); // dereferenced
+        String edgeName = null;
+        if (relation.getForwardRelation() != null) {
+            edgeName = relation.getForwardRelation().getName();
         }
         if (edgeName == null) edgeName = pascalCaseToSpaced(relation.getName());
         Label l = Label.of(edgeName);
@@ -211,6 +203,7 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
 
     @Override
     public Boolean caseConceptInstance(ConceptInstance instance) {
+        if (instance.isRef()) return true;
         List<String> header = new ArrayList<>();
         for (Classifier c : OmlSearch.findTypes(instance)) {
             header.add("«" + c.getAbbreviatedIri() + "»");
@@ -223,6 +216,7 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
 
     @Override
     public Boolean caseRelationInstance(RelationInstance instance) {
+        if (instance.isRef()) return true;
         // generate node
         List<String> header = new ArrayList<>();
         for (Classifier c : OmlSearch.findTypes(instance)) {
@@ -236,7 +230,7 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
         for (NamedInstance objectSource: instance.getSources()) {
             linkMembers(instance, objectSource, Label.of("«from»"));
         }
-        for (NamedInstance objectTarget : instance.getTargets()) {              
+        for (NamedInstance objectTarget : instance.getTargets()) {
             linkMembers(instance, objectTarget, Label.of("«to»"));
         }
 
@@ -302,9 +296,7 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
     // check if member comes from outside the ontology and
     // if so make sure that it has a node in the graph
     void addOutsideNodeIfNecessary(Member member, Ontology compareTo) {
-        boolean checkMember = member.getOntology() != compareTo;
-        boolean checkRef = member.isRef() ? member.getRef().getOntology() != compareTo : true;
-        if (checkMember && checkRef && !nodes.containsKey(member.getName())) {
+        if (member.getOntology() != compareTo && !nodes.containsKey(member.getName())) {
             List<String> otherHeader = new ArrayList<>();
             String c = member.getClass().toString();
             c = c.substring(c.lastIndexOf('.')+1, c.length()-4);
@@ -358,33 +350,31 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
     // creates a link between members
     @SafeVarargs
     private void linkMembers(Member src, Member dst, Attributes<? extends ForLink>... attributes) {
-        addOutsideNodeIfNecessary(dst, src.getOntology());
-        src = src.isRef() ? src.getRef() : src;
-        dst = dst.isRef() ? dst.getRef() : dst;
         // ideally I wouldn't make a new node but there's no guarantee that the dst node exists yet
         Link edge = to(node(dst.getName()));
         if (attributes != null) {
             edge = edge.with(attributes);
         }
         edges.get(src.getName()).add(edge);
+        addOutsideNodeIfNecessary(dst, src.getOntology());
     }
 
     private String xmlEscape(String original) {
         return original
-            .replace("&", "&amp;")
-            // .replace("'", "&apos;") // not mentioned on graphviz website
-            .replace("\"", "&quot;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;");
+                .replace("&", "&amp;")
+                // .replace("'", "&apos;") // not mentioned on graphviz website
+                .replace("\"", "&quot;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;");
     }
 
     public String pascalCaseToSpaced(String str) {
         // Regular Expression
         String regex = "([a-z])([A-Z]+)";
- 
+
         // Replacement string
         String replacement = "$1 $2";
- 
+
         // Replace the given regex
         // with replacement string
         // and convert it to lower case.
