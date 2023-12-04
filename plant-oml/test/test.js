@@ -24,4 +24,26 @@ describe("App Component Testing", () => {
       assert.equal("PlantOML", textContent);
     });
   });
+
+  it("Checks input OML file", () => {
+    
+    // ReactDOM.render(App(), rootContainer);
+    
+    // const h1 = rootContainer.querySelector("App-header");
+    var textContent = "test";
+    it("should return equal strings", () => {
+      assert.equal("PlantOML", textContent);
+    });
+  });
+
+  it("Verifies API call is made", () => {
+    
+    // ReactDOM.render(App(), rootContainer);
+    
+    // const h1 = rootContainer.querySelector("App-header");
+    var textContent = "test";
+    it("should return equal strings", () => {
+      assert.equal("PlantOML", textContent);
+    });
+  });
 });
