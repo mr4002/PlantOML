@@ -3,7 +3,7 @@ import './Options.css'
 
 const OptionsComponent = () => {
   return (
-    <div class='flexbox'>
+    <div className='flexbox'>
         <label class="label">
             Node Shape:
         </label>
@@ -14,7 +14,7 @@ const OptionsComponent = () => {
         </select>
         <br />
 
-        <label class="label">
+        <label className="label">
             Node Color:  
         </label> 
         <select name="nodeColor">
@@ -24,7 +24,7 @@ const OptionsComponent = () => {
         </select>
         <br />
 
-        <label class="label">
+        <label className="label">
             Edge Color: 
         </label>  
         <select name="edgeColor">
@@ -33,7 +33,7 @@ const OptionsComponent = () => {
         </select>
         <br />
 
-        <label class="label">
+        <label className="label">
             Edge Style:   
         </label>
         <select name="edgeStyle">
@@ -43,7 +43,7 @@ const OptionsComponent = () => {
         </select>
         <br />
 
-        <label class="label">
+        <label className="label">
             Graph Layout:   
         </label>
         <select name="graphLayout">
@@ -53,7 +53,7 @@ const OptionsComponent = () => {
         </select>
         <br />
 
-        <label class="label">
+        <label className="label">
         Graph Background Color:  
         </label> 
         <select name="graphBackgroundColor">
@@ -62,7 +62,7 @@ const OptionsComponent = () => {
         </select>
         
 
-        <label class="label">
+        <label className="label">
             DPI:
          </label>
         <input type="range" name="dpi" min="72" max="300" step="1" />
