@@ -4,11 +4,15 @@ import * as vscode from "vscode";
 import axios from "axios";
 import * as path from "path";
 import decompress from "decompress";
-import JSZip from "jszip";
+import JSZip, { file } from "jszip";
+import { exit } from "process";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 const fs = vscode.workspace.fs;
+
+const imageZipFolder = ".oml_diagrams";
+const imageZipFile = "images.zip";
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
@@ -18,13 +22,22 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.withProgress(
           {
             location: vscode.ProgressLocation.Notification,
-            title: "Generating diagrams...",
+            title: "Generating new OML diagrams...",
             cancellable: false,
           },
           (progress, task) => {
             return runMain();
           }
         );
+      }
+    )
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "plantoml-extension.previewOMLDiagram",
+      async () => {
+        await displayOmlDiagram(context);
       }
     )
   );
@@ -37,9 +50,6 @@ const runMain = async () => {
     return;
   }
   const zipBlob = await getZippedBlob(mainFolder.uri);
-
-  const imageZipFolder = "images";
-  const imageZipFile = "images.zip";
   await writeImagesZip(zipBlob, mainFolder, imageZipFile);
 
   decompress(
@@ -117,65 +127,79 @@ const writeImagesZip = async (
   }
 };
 
-// const getImage = async (context: vscode.ExtensionContext, omlCode: string) => {
-//   console.log({ omlCode });
-//   try {
-//     const response = await axios.get(
-//       "https://picsum.photos/seed/picsum/200/300"
-//     );
-//     console.log(response);
-//     const imageBuffer = Buffer.from(response.data, "binary");
-//     console.log({ imageBuffer });
-//     await displayImageFromBuffer(context, imageBuffer);
-//   } catch (e: unknown) {
-//     console.log({ e });
-//     vscode.window.showErrorMessage(`Error: ${e}`);
-//   }
-// };
+let currentPanel: vscode.WebviewPanel | undefined = undefined;
 
-// let currentPanel: vscode.WebviewPanel | undefined = undefined;
+const displayOmlDiagram = async (context: vscode.ExtensionContext) => {
+  const activeEditor = vscode.window.activeTextEditor;
+  if (!activeEditor) {
+    vscode.window.showErrorMessage("No OML file opened");
+    return;
+  }
 
-// const displayImageFromBuffer = async (
-//   context: vscode.ExtensionContext,
-//   imageBuffer: Buffer
-// ) => {
-//   const columnToShowIn = vscode.window.activeTextEditor
-//     ? vscode.window.activeTextEditor.viewColumn
-//     : undefined;
-//   if (!currentPanel) {
-//     currentPanel = vscode.window.createWebviewPanel(
-//       "omldiagram",
-//       "OML Diagram",
-//       columnToShowIn || vscode.ViewColumn.Beside,
-//       {}
-//     );
-//   }
-//   const imageUri = await getImageUri(context, imageBuffer);
-//   console.log({ imageUri });
-//   currentPanel.webview.html = getWebviewContent(imageUri);
+  const document = activeEditor.document;
+  const fileName = document.fileName;
+  if (fileName?.substring(fileName.length - 4) !== ".oml") {
+    vscode.window.showErrorMessage("Not an OML file");
+    return;
+  }
 
-//   // Reset when the current panel is closed
-//   currentPanel.onDidDispose(
-//     () => {
-//       currentPanel = undefined;
-//     },
-//     null,
-//     context.subscriptions
-//   );
-// };
+  //find the image uri of
+  let diskUri;
+  try {
+    //check if images directory exists
+    const mainFolder = vscode.workspace.workspaceFolders?.[0];
+    if (!mainFolder) {
+      throw Error("Invalid OML workspace folder");
+    }
+    const imagesDirPath = path.join(mainFolder.uri.fsPath, imageZipFolder);
+    const images = await fs.readDirectory(vscode.Uri.parse(imagesDirPath));
+    for (const image of images) {
+      const imageName = image[0].substring(0, image[0].length - 4);
+      console.log({ 1: imageName, 2: path.basename(fileName) });
+      if (imageName + ".oml" === path.basename(fileName)) {
+        diskUri = vscode.Uri.parse(path.join(imagesDirPath, image[0]));
+      }
+    }
+  } catch (e) {
+    console.error(e);
+    vscode.window.showErrorMessage(
+      "Image not found. Try generating diagrams first."
+    );
+    return;
+  }
+  if (!diskUri) {
+    vscode.window.showErrorMessage(
+      "Image not found. Try generating diagrams first."
+    );
+    return;
+  }
 
-// const getImageUri = async (
-//   context: vscode.ExtensionContext,
-//   imageBuffer: Buffer
-// ) => {
-//   const imageBase64 = imageBuffer.toString("base64");
-//   console.log({ imageBase64 });
-//   const imageMimeType = "image/jpeg";
-//   console.log(imageBase64.length);
-//   return `data:${imageMimeType};base64,${imageBase64}`;
-// };
+  const columnToShowIn = activeEditor ? activeEditor.viewColumn : undefined;
+  if (currentPanel) {
+    currentPanel.reveal(columnToShowIn);
+  } else {
+    currentPanel = vscode.window.createWebviewPanel(
+      "omldiagram",
+      `OML Diagram Preview`,
+      columnToShowIn || vscode.ViewColumn.Beside,
+      {}
+    );
+  }
 
-const getWebviewContent = (imageUris: string[]) => {
+  const imageSrc = currentPanel.webview.asWebviewUri(diskUri);
+  currentPanel.webview.html = getWebviewContent(imageSrc);
+
+  // Reset when the current panel is closed
+  currentPanel.onDidDispose(
+    () => {
+      currentPanel = undefined;
+    },
+    null,
+    context.subscriptions
+  );
+};
+
+const getWebviewContent = (imageUri: vscode.Uri) => {
   return `<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -184,7 +208,7 @@ const getWebviewContent = (imageUris: string[]) => {
 		<title>OML Diagram</title>
 	</head>
 	<body>
-  ${imageUris.map((uri) => `<img src="${uri}" alt="Image">`).join("")}
+  <img src="${imageUri}" alt="Image">
 	</body>
 	</html>`;
 };

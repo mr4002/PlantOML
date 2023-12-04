@@ -16,8 +16,21 @@
       {
         "command": "plantoml-extension.visualizeOML",
         "title": "Visualize OML"
+      },
+      {
+        "command": "plantoml-extension.previewOMLDiagram",
+        "title": "Preview OML Diagram"
       }
-    ]
+    ],
+    "menus": {
+      "editor/title": [
+          {
+              "command": "plantoml-extension.previewOMLDiagram",
+              "when": "true",
+              "group": "navigation"
+          }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
