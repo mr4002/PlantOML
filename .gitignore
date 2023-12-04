@@ -1,3 +1,8 @@
+.DS_Store
+
+
+.vscode/
+
 # Java Below =========================================
 # Compiled class file
 *.class

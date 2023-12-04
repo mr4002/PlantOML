@@ -1,0 +1,15 @@
+.resize-handle {
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: ew-resize;
+}
+
+.resize-handle::before {
+    content: '';
+    width: 20px;
+    height: 50px; 
+    background: #ccc;
+    border-radius: 1px;
+}
