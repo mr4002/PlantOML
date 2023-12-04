@@ -194,10 +194,56 @@ function Server() {
         }
     };
 
-    const processZip = async (blob) => {
-        const zip = await JSZip.loadAsync(blob);
-        const fileTreeCopy = JSON.parse(JSON.stringify(files));
+    const handleDownload = async () => {
+        const zip = new JSZip();
     
+        const addFilesToZip = (files, path = '') => {
+            files.forEach(file => {
+                if (file.type === 'file') {
+                    console.log(file.name, file.rawFile);
+                    zip.file(path + file.name, file.rawFile);
+                } else if (file.type === 'folder') {
+                    addFilesToZip(file.children, path + file.name + '/');
+                }
+            });
+        };
+        
+        addFilesToZip(files);
+    
+        try {
+            const zipBlob = await zip.generateAsync({ type: 'blob' });
+            const url = URL.createObjectURL(zipBlob);
+    
+            const a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+            a.href = url;
+            a.download = 'project_and_diagrams.zip';
+            a.click();
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        } catch (error) {
+            console.error('Error creating download:', error);
+        }
+    };
+    
+    const deepCopyFileTree = (nodes) => { //thanks chatgpt
+        return nodes.map(node => {
+            if (node.type === 'folder') {
+                return { ...node, children: deepCopyFileTree(node.children) };
+            } else {
+                // For file nodes, create a new object and copy the rawFile explicitly
+                return { ...node, rawFile: node.rawFile };
+            }
+        });
+    };
+
+    const processZip = async (blob) => {
+        console.log("HERE")
+        console.log(files)
+        const zip = await JSZip.loadAsync(blob);
+        const fileTreeCopy = deepCopyFileTree(files); //THIS IS ESSENTIAL
+        console.log(fileTreeCopy)
         const diagramsDir = {
             name: 'diagrams',
             type: 'folder',
@@ -212,6 +258,7 @@ function Server() {
             if (zipEntry.dir) continue;
     
             const fileBlob = await zipEntry.async("blob");
+            console.log(zipEntry.name, fileBlob instanceof Blob);
             diagramsDir.children.push({
                 name: zipEntry.name,
                 type: 'file',
@@ -219,7 +266,6 @@ function Server() {
                 rawFile: fileBlob
             });
         }
-    
         setFiles(fileTreeCopy);
     };
 
@@ -283,6 +329,7 @@ function Server() {
             <div className="toolbar">
                 <OptionsComponent/>
                 <button onClick={handleSubmit}>Submit</button>
+                <button onClick={handleDownload}>Download</button>
             </div>
         </div>
     );
