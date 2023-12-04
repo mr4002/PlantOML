@@ -55,7 +55,36 @@ public class DiagramController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<?> uploadOmlProject(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<?> uploadOmlProject(@RequestParam("file") MultipartFile file,        
+        @RequestParam(value = "nodeShape", required = false) String nodeShape,
+        @RequestParam(value = "nodeColor",required = false) String nodeColor,
+        @RequestParam(value = "edgeColor",required = false) String edgeColor,
+        @RequestParam(value = "edgeStyle",required = false) String edgeStyle,
+        @RequestParam(value = "graphLayout",required = false) String graphLayout,
+        @RequestParam(value = "graphBgColor",required = false) String graphBgColor,
+        @RequestParam(value = "dpi",required = false) String dpi) {
+        this.options = new ArrayList<>();
+        if (nodeShape != null && !nodeShape.isEmpty()) {
+            this.options.add("-Nshape=" + nodeShape);
+        }
+        if (nodeColor != null && !nodeColor.isEmpty()) {
+            this.options.add("-Ncolor=" + nodeColor);
+        }
+        if (edgeColor != null && !edgeColor.isEmpty()) {
+            this.options.add("-Ecolor=" + edgeColor);
+        }
+        if (edgeStyle != null && !edgeStyle.isEmpty()) {
+            this.options.add("-Estyle=" + edgeStyle);
+        }
+        if (graphLayout != null && !graphLayout.isEmpty()) {
+            this.options.add("-K" + graphLayout);
+        }
+        if (graphBgColor != null && !graphBgColor.isEmpty()) {
+            this.options.add("-Gbgcolor=" + graphBgColor);
+        }
+        if (dpi != null && !dpi.isEmpty()) {
+            this.options.add("-Gdpi=" + dpi);
+        }
         System.out.println("HERE");
         if (file.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("File is empty");
@@ -192,13 +221,14 @@ public class DiagramController {
             //build command
             ArrayList<String> command = new ArrayList<String>();
             command.add("dot");
+            System.out.print(options);
             if (this.options != null) {
                 command.addAll(options);
             }
             command.add("-Tpng");
             command.add(dotFilePath.toString());
-
-            ProcessBuilder processBuilder = new ProcessBuilder("dot", "-Tpng", dotFilePath.toString());
+            System.out.print(command);
+            ProcessBuilder processBuilder = new ProcessBuilder(command);
             Process process = processBuilder.start();
 
             //process png
