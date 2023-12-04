@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FileTree from './/FileTree';
+import FileTree from './FileTree';
 import MonacoEditor from 'react-monaco-editor';
 import OptionsComponent from './Options';
 import { Resizable } from 're-resizable';
@@ -230,7 +230,7 @@ function Server() {
                 >
                     <div className="file-tree">
                         <input type="file" webkitdirectory="true" onChange={handleFolderUpload} />
-                        <FileTree files={files} onFileSelect={handleFileSelect} />
+                        <FileTree className="file-tree" files={files} onFileSelect={handleFileSelect}/>
                     </div>
                 </Resizable>
                 <div className="editor">

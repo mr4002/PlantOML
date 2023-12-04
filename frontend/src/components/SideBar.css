@@ -1,18 +1,15 @@
 .sidebar {
-    flex-direction: column;
-    position: fixed; /* Fixes the sidebar position */
-    top: 0; /* Position it from the top */
-    left: 0; /* Position it from the left */
-    height: 100vh; /* 100% of viewport height */
-    width: 10%; /* 20% of the viewport width */
-    background-color: #f0f0f0; /* Example background color */
-    padding-left: 20px;
-    border-right: 1px solid #ccc; /* Optional border */
-    overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
-    padding-top: 20px; /* Optional padding to create space from the top */
-  }
-  .item{
-    padding-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
 
-  
+.item {
+  padding: 10px;
+  display: flex;
+  align-items: center; 
+}
+
+.item svg {
+  margin-right: 8px; 
+}

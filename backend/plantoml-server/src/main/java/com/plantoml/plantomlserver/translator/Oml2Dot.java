@@ -45,19 +45,11 @@ public class Oml2Dot extends OmlSwitch<Boolean> {
         System.out.println(inputResource.getURI().toFileString());
         // initialize the DOT graph (TODO: what is graph structure going to look like???)
         dot = graph("omldiagram")
-<<<<<<< HEAD
-                .directed()
-                // TODO maybe allow these to be customized from the frontend
-                .graphAttr().with(Rank.dir(RankDir.BOTTOM_TO_TOP), GraphAttr.splines(SplineMode.SPLINE))
-                .nodeAttr().with(Shape.PLAIN_TEXT);
-
-=======
             .directed()
         // TODO maybe allow these to be customized from the frontend
             .graphAttr().with(Rank.dir(RankDir.BOTTOM_TO_TOP), GraphAttr.splines(SplineMode.SPLINE))
             .nodeAttr().with(Shape.PLAIN_TEXT);
             
->>>>>>> 35e8ee2f2949de409090a15661be02984928aa13
         // traverse all elements in the resource
         Iterable<EObject> iterable = () -> inputResource.getAllContents();
         StreamSupport.stream(iterable.spliterator(), false)
