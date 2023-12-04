@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: sticky;
+    font-size: 9px;
     bottom: 0;
     width: 100%;
     background-color: #f5f5f5;
