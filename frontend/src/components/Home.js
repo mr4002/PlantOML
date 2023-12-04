@@ -1,15 +1,15 @@
 function Home() {
     return (<div>
     <h1>Home</h1>
-    <h2>First Section</h2>
     <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae metus in velit varius rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam luctus quam non sem porttitor venenatis. Cras volutpat leo ac ante ullamcorper elementum. Vestibulum sollicitudin neque eu hendrerit sodales. Quisque et ligula sed leo sagittis feugiat. In accumsan ligula ut interdum pharetra. Nam dictum velit a aliquet tempus. Quisque finibus, libero vel maximus accumsan, mi diam blandit neque, non vulputate ligula mauris eu ex. Mauris bibendum vel ante a varius. Nullam nec elit ultricies tortor mollis commodo in vitae dui. Ut maximus nec mauris sed sodales. Ut egestas odio augue, a euismod urna feugiat ut.
-
-Curabitur sit amet nisi non lectus porta tempor. Aliquam velit ante, venenatis in purus eget, ornare hendrerit libero. Morbi nisi justo, tempus eget convallis ut, dapibus eu libero. Cras commodo aliquet lacus, sit amet luctus sem blandit at. Proin pharetra condimentum magna, molestie venenatis nibh sodales varius. Sed pretium at nunc in varius. Vivamus eu leo convallis, vehicula nunc quis, condimentum velit.
-
-Pellentesque sit amet leo et velit pharetra malesuada in at ligula. Praesent diam ante, vulputate sed aliquam in, interdum in nulla. Mauris fringilla mollis est, non laoreet mi euismod id. Integer gravida pretium semper. Donec sem sapien, tempor quis enim vel, vulputate volutpat erat. Nunc ut magna at velit feugiat luctus eget eget ipsum. Vestibulum vel mollis risus. Cras sit amet venenatis augue.
-
-Phasellus auctor feugiat suscipit. Sed mattis suscipit sollicitudin. Duis vitae porta mi. Pellentesque efficitur pretium purus. Nunc ut sodales est, laoreet condimentum diam. Suspendisse eu convallis mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum est arcu, pharetra non facilisis quis, pellentesque ut mauris. Duis dignissim tortor et scelerisque dignissim. Nullam dictum maximus lacus quis bibendum. In hac habitasse platea dictumst. Aliquam non velit a magna consequat volutpat nec vitae magna.
+    PlantOML is a graph visualization tool which allows the user to input an OML file and retrieve a visualization of that file as a graph image. The visualization part is an automatic process handled by the application's backend, which uses a custom-built OML to DOT compiler to then input the translated DOT grammar into GraphViz, a pre-existing graph visualization tool. The returned images are given to the user in multiple optional formats, with the default being a png file.
+    </p>
+    <h2>Background</h2>
+    <p>
+    The PlantOML application is inspired from the PlantUML web application, which provides similar functionality for UML syntax as an input. The PlantOML application runs as a full-stack layered application, with Java springboot as the backend API server, a python Flask server to generate the images, and a React.js web application as the frontend. The custom-made OML to DOT compiler is handled in the Java backend, with manual implementation of the rules of the grammar of OML parsed into inputs of the DOT language. Our application offers output in .png (lossless), so the user can optionally convert to .jpeg and .svg themselves after receiving them.
+    </p>
+    <h2>What is OML?</h2>
+    <p>Ontological Modeling Language (OML) is a modeling language specified at https://www.opencaesar.io/oml/. It is used to create system engineering vocabularies that can describe systems. OML supports several concrete members such as Aspect, Concept, Relation Entity, Structure, Scalar, Annotation Property, Concept instance, and Relation Instance. You can define Vocabularies, Vocabulary Bundles, Descriptions, and Description Bundles. Vocabularies are a set of ways to describe a system or object, and vocabulary bundles allow you to do closed-system analysis. A description is an instance of the vocabulary and a description bundle similarly lets you do closed-system analysis. OML has the following beneficial characteristics: expressivity, modularity, extensibility, and description logic. It’s concise and easy to understand syntax makes it a great choice to model complex systems. By generating graphs of these complex systems, PlantOML can give you a way to better visualize the relationships in your system.
     </p>
     </div>);
 }
