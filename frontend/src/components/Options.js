@@ -54,7 +54,7 @@ const OptionsComponent = () => {
             <option value=""></option>
             <option value="dot">Dot</option>
             <option value="neato">Neato</option>
-            <option value="circo">Neato</option>
+            <option value="circo">Circo</option>
             <option value="fdp">FDP</option>
         </select>
         <br />
