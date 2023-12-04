@@ -3,7 +3,7 @@ import FileTree from './FileTree';
 import MonacoEditor from 'react-monaco-editor';
 import OptionsComponent from './Options';
 import { Resizable } from 're-resizable';
-import JSZip from 'jszip';
+import JSZip, { file } from 'jszip';
 
 import ResizeHandle from './/ResizeHandle';
 import './Toolbar.css';
@@ -70,7 +70,7 @@ function Server() {
             }
             return fileList;
         };
-    
+        
         const flatFiles = flattenTree({ children: files });
         const fileObj = flatFiles.find(file => file.path && file.path.endsWith(filename));
     
@@ -114,9 +114,34 @@ function Server() {
         });
     };
     
-    const handleEditorChange = (newValue) => {
-        console.log('TEST')
+    const handleEditorChange = (newValue) => { //TODO: fix this
         setCode(newValue);
+    
+        const updateFileInTree = (node, filename, newContent) => {
+            if (node.type === 'file' && node.path && node.path.endsWith(filename)) {
+                node.rawFile = new Blob([newContent], { type: "text/plain" });
+                return true;
+            }
+    
+            if (node.children) {
+                for (let child of node.children) {
+                    if (updateFileInTree(child, filename, newContent)) {
+                        return true;
+                    }
+                }
+            }
+    
+            return false;
+        };
+    
+        // Create a copy of the files state
+        const fileTreeCopy = JSON.parse(JSON.stringify(files));
+    
+        // Update the file in the copied file tree
+        updateFileInTree({ children: fileTreeCopy }, currentFile, newValue);
+
+        // Update the files state
+        setFiles(fileTreeCopy);
     };
 
     const handleSubmit = async () => {
@@ -125,7 +150,7 @@ function Server() {
 
         const zip = new JSZip();
     
-        // Recursively add files to the zip
+        //recursively add files to the zip
         const addFilesToZip = (files, path = '') => {
             files.forEach(file => {
                 if (file.type === 'file') {
@@ -135,8 +160,8 @@ function Server() {
                 }
             });
         };
-    
-        addFilesToZip(files);
+        
+        addFilesToZip(files); 
     
         try {
             const zipBlob = await zip.generateAsync({ type: 'blob' });
