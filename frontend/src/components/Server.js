@@ -123,8 +123,6 @@ function Server() {
         //handle null options
         var selectElements = document.querySelectorAll('select');
 
-        
-
         const zip = new JSZip();
     
         // Recursively add files to the zip
@@ -173,23 +171,28 @@ function Server() {
 
     const processZip = async (blob) => {
         const zip = await JSZip.loadAsync(blob);
-        const fileTreeCopy = JSON.parse(JSON.stringify(files)); 
+        const fileTreeCopy = JSON.parse(JSON.stringify(files));
     
+        const diagramsDir = {
+            name: 'diagrams',
+            type: 'folder',
+            children: [],
+            path: '/diagrams/'
+        };
+    
+        fileTreeCopy.push(diagramsDir);
+    
+        // Process each file in the ZIP
         for (const [relativePath, zipEntry] of Object.entries(zip.files)) {
-            if (zipEntry.dir) continue; 
+            if (zipEntry.dir) continue;
     
-            const dirPath = getDirPath(relativePath); 
-            const dirNode = findNode(fileTreeCopy, dirPath); 
-    
-            if (dirNode) {
-                const fileBlob = await zipEntry.async("blob");
-                dirNode.children.push({
-                    name: zipEntry.name,
-                    type: 'file',
-                    path: relativePath,
-                    rawFile: fileBlob 
-                });
-            }
+            const fileBlob = await zipEntry.async("blob");
+            diagramsDir.children.push({
+                name: zipEntry.name,
+                type: 'file',
+                path: 'diagrams/' + zipEntry.name,
+                rawFile: fileBlob
+            });
         }
     
         setFiles(fileTreeCopy);
