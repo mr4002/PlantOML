@@ -144,6 +144,7 @@ function Server() {
 
         // Create a copy of the files state
         const fileTreeCopy = deepCopyFileTree(files);
+        console.log({ fileTreeCopy, files });
         // const fileTreeCopy = JSON.parse(JSON.stringify(files));
 
         // Update the file in the copied file tree
@@ -190,7 +191,8 @@ function Server() {
             console.log(formData.getAll("nodeColor"));
 
             const response = await fetch(
-                "http://54.177.143.251:8080/plantoml/oml/upload",
+                // "http://54.177.143.251:8080/plantoml/oml/upload",
+                "http://localhost:8080/plantoml/oml/upload",
                 {
                     //TODO:replace this with public ipv4 of ec2 instance
                     method: "POST",
@@ -259,7 +261,7 @@ function Server() {
         console.log("HERE");
         console.log(files);
         const zip = await JSZip.loadAsync(blob);
-        const fileTreeCopy = deepCopyFileTree(files); //THIS IS ESSENTIAL
+        let fileTreeCopy = deepCopyFileTree(files); //THIS IS ESSENTIAL
         console.log(fileTreeCopy);
         const diagramsDir = {
             name: "diagrams",
@@ -268,6 +270,18 @@ function Server() {
             path: "/diagrams/",
         };
 
+        let diagramsFound = false;
+        let diagramIndex = 0;
+        fileTreeCopy.map((file, index) => {
+            if (file.name === "diagrams") {
+                diagramsFound = true;
+                diagramIndex = index;
+            }
+        });
+
+        if (diagramsFound) {
+            fileTreeCopy.splice(diagramIndex, 1);
+        }
         fileTreeCopy.push(diagramsDir);
 
         // Process each file in the ZIP
@@ -305,7 +319,36 @@ function Server() {
     };
 
     return (
-        <div className="App">
+        <div
+            className="App"
+            onClick={() => {
+                const getFileInTree = (node, filename) => {
+                    if (
+                        node.type === "file" &&
+                        node.path &&
+                        node.path.endsWith(filename)
+                    ) {
+                        // node.rawFile = new Blob([newContent], { type: "text/plain" });
+                        console.log("HEYY2Y");
+                        const text = new Response(node.rawFile).text();
+                        text.then((t) => {
+                            console.log(t);
+                        });
+                    }
+
+                    if (node.children) {
+                        for (let child of node.children) {
+                            if (getFileInTree(child, filename)) {
+                                return true;
+                            }
+                        }
+                    }
+
+                    return false;
+                };
+                getFileInTree({ children: files }, "objectives.oml");
+            }}
+        >
             <div className="container">
                 <Resizable
                     defaultSize={{
