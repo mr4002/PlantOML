@@ -36,7 +36,7 @@ import guru.nidi.graphviz.model.MutableGraph;
 import guru.nidi.graphviz.parse.Parser;
 import org.springframework.web.multipart.MultipartFile;
 
-@CrossOrigin(origins = "http://plantoml.com") // Frontend domain
+@CrossOrigin(origins = "http://localhost:3000") // Allow only a specific origin
 @RestController
 @RequestMapping("/plantoml/oml")
 public class DiagramController {

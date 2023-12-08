@@ -178,7 +178,7 @@ function Server() {
             }
             console.log(formData.getAll('nodeColor'))
     
-            const response = await fetch('http://54.177.143.251:8080/plantoml/oml/upload', { //TODO:replace this with public ipv4 of ec2 instance
+            const response = await fetch('http://localhost:8080/plantoml/oml/upload', { //TODO:replace this with public ipv4 of ec2 instance
                 method: 'POST',
                 body: formData
             });
