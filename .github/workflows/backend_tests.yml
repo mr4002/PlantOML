@@ -1,5 +1,4 @@
 name: Python and Java Workflow
-
 on:
   push:
     branches:
@@ -24,5 +23,6 @@ jobs:
           pip3.9 install requests
 
       - name: Run Python script
-        run: python3.9 backend/plantoml-server/tests/runTests.py
+        working-directory: backend/plantoml-server/tests
+        run: runTests.py
 
