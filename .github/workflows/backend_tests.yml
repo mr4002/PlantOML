@@ -21,7 +21,8 @@ jobs:
       - name: Install dependencies
         run: |
           python3.9 -m pip install --upgrade pip
+          pip3.9 install requests
 
       - name: Run Python script
-        run: python backend/plantoml-server/tests/runTests.py
+        run: python3.9 backend/plantoml-server/tests/runTests.py
 
