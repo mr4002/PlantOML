@@ -27,13 +27,26 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 
+/**
+ * This class is responsible for parsing OML files and converting them to DOT format.
+ * It sets up the necessary OML infrastructure, validates the OML file, and then uses
+ * the Oml2Dot class to perform the conversion.
+ */
 public class Oml2DotApp {
     private static final Logger LOGGER = LoggerFactory.getLogger(Oml2DotApp.class);
 
+    /**
+     * Constructor for Oml2DotApp.
+     */
     public Oml2DotApp(){
     }
 
-
+    /**
+     * Parses the OML file at the given path and converts it to DOT format.
+     *
+     * @param omlFilePath The path to the OML file to be parsed.
+     * @return A String representation of the DOT format of the given OML file.
+     */
     public String parse(Path omlFilePath) {
 
 
@@ -54,42 +67,58 @@ public class Oml2DotApp {
             String validationResults = OmlValidator.validate(resource);
             if (!validationResults.isEmpty()) {
                 System.out.println("ERROR VALIDATING: " + resource.getURI());
-//                LOGGER.error("Validation errors: " + validationResults);
+                LOGGER.error("Validation errors: " + validationResults);
                 throw new IllegalStateException("Validation errors: " + validationResults);
             }
 
             //convert to DOT format
             String dotRepresentation = convertToDot(resource);
-//            LOGGER.info("Converted OML to DOT format: " + dotRepresentation);
+            LOGGER.info("Converted OML to DOT format: " + dotRepresentation);
             System.out.println("===================");
             System.out.println(resource.getURI());
             System.out.println(dotRepresentation);
             return dotRepresentation;
 
         } catch (IOException e) {
-//            LOGGER.error("Error parsing OML file: " + e.getMessage(), e);
+            LOGGER.error("Error parsing OML file: " + e.getMessage(), e);
             return null;
         }
     }
 
+    /**
+     * Converts the given resource to DOT format.
+     *
+     * @param resource The OML resource to be converted.
+     * @return A String representation of the DOT format of the resource.
+     */
     private String convertToDot(Resource resource) {
         Oml2Dot oml2Dot = new Oml2Dot();
         return oml2Dot.convert(resource);
     }
 
-    // private byte[] convertToImage(Resource resource) {
-    //     Oml2Dot oml2Dot = new Oml2Dot();
-    //     return oml2Dot.convert(resource);
-    // }
-
+    /**
+     * A custom ECrossReferenceAdapter extension that filters cross-references
+     * to a specified set of resources.
+     */
     private class ECrossReferenceAdapterEx extends ECrossReferenceAdapter {
 
         private Set<Resource> allResources = Collections.emptySet();
 
+        /**
+         * Sets the resources to be considered for cross-referencing.
+         *
+         * @param allResources A set of resources to be used for cross-referencing.
+         */
         public void setAllResources(Set<Resource> allResources) {
             this.allResources = allResources;
         }
 
+        /**
+         * Returns the inverse references of an EObject, filtered by the set of resources.
+         *
+         * @param eObject The EObject whose inverse references are to be returned.
+         * @return A collection of settings referencing the EObject.
+         */
         @Override
         public Collection<EStructuralFeature.Setting> getInverseReferences(EObject eObject) {
             var references = super.getInverseReferences(eObject);
