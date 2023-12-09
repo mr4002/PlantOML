@@ -16,11 +16,19 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.9' 
+          
+      - name: Set executable permissions for mvnw
+        run: chmod +x mvnw
+        working-directory: backend/plantoml-server/
 
       - name: Install dependencies
         run: |
           python3.9 -m pip install --upgrade pip
           pip3.9 install requests
+
+      - name: Set executable permissions for mvnw
+        run: chmod +x runTests.py
+        working-directory: backend/plantoml-server/tests
 
       - name: Run Python script
         run: ./runTests.py
