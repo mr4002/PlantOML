@@ -5,6 +5,13 @@ import GetStartedIcon from '@mui/icons-material/PlayCircleOutline';
 import ServerIcon from '@mui/icons-material/Cloud';
 import './SideBar.css';
 
+
+/**
+ * Sidebar component for navigation within the application.
+ * 
+ * This component renders a vertical navigation bar with links to different
+ * sections of the application, each represented by an icon.
+ */
 const Sidebar = () => {
     return (
         <div className="sidebar">

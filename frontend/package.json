@@ -10,10 +10,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "babel": "^6.23.0",
-    "buffer": "^6.0.3",
     "jszip": "^3.10.1",
-    "mocha": "^10.2.0",
     "re-resizable": "^6.9.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,15 +22,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
-    "test": "mocha",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "babel": {
-    "presets": [
-      "react"
-    ]
   },
   "eslintConfig": {
     "extends": [
@@ -54,8 +46,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.23.5",
-    "@babel/register": "^7.22.15",
-    "babel-plugin-inline-react-svg": "^2.0.2"
+    "@babel/plugin-proposal-private-property-in-object": "latest",
+    "babel-plugin-inline-react-svg": "latest"
   }
 }

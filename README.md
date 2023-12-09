@@ -29,3 +29,8 @@ Ontological Modeling Language (OML) is a modeling language specified at https://
 Once you have an OML project directory, go to the PlantOML online server and upload your directory with the choose file button. You can edit any files you want straight from the browser. Then, pick options for how you want your graph generated and submit.
 
 For each file, we will generate an OML graph with the format of <filename>.png. (convert this into a nice HTML structure)
+
+## Documentation
+
+- [Javadoc Documentation](https://emmettlsc.github.io/PlantOML/frontend/docs/)
+- [JSDoc Documentation](https://emmettlsc.github.io/PlantOML/backend/docs/)
