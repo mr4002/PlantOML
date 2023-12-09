@@ -22,6 +22,7 @@ jobs:
     steps:
     - uses: ./frontend
     - name: Use Node.js ${{ matrix.node-version }}
+      uses: ./frontend
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
