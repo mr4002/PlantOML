@@ -15,7 +15,7 @@ describe("Frontend API Call Testing", () => {
     it("should call the API from the frontend", () => {
       assert.equal("PlantOML", textContent);
     });
-    async function logMovies() {
+    async function logDiagrams() {
       const response = await fetch("localhost:8080/"); // calls local API backend server
       const diagrams = await response.json();
       console.log(diagrams);
