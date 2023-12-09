@@ -1,4 +1,32 @@
-import React, { useState } from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Server.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Server.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react';
 import FileTree from './FileTree';
 import MonacoEditor from 'react-monaco-editor';
 import OptionsComponent from './Options';
@@ -48,7 +76,7 @@ function Server() {
             if (pathParts.length === 0) return parentNode;
     
             const part = pathParts.shift();
-            let node = parentNode.children.find(n => n.name === part && n.type === 'folder');
+            let node = parentNode.children.find(n => n.name === part &amp;&amp; n.type === 'folder');
     
             if (!node) {
                 node = { name: part, type: 'folder', children: [] };
@@ -95,9 +123,9 @@ function Server() {
         };
     
         const flatFiles = flattenTree({ children: files });
-        const fileObj = flatFiles.find(file => file.path && file.path.endsWith(filename));
+        const fileObj = flatFiles.find(file => file.path &amp;&amp; file.path.endsWith(filename));
     
-        if (fileObj && fileObj.rawFile) {
+        if (fileObj &amp;&amp; fileObj.rawFile) {
             if (fileExtension === 'png' || fileExtension === 'svg') {
                 try {
                     const imageUrl = await readFileAsDataURL(fileObj.rawFile);
@@ -171,7 +199,7 @@ function Server() {
             const zipBlob = await zip.generateAsync({ type: 'blob' });
             const formData = new FormData();
             formData.append('file', zipBlob, 'project.zip');
-            for (var i = 0; i < selectElements.length; i++) {
+            for (var i = 0; i &lt; selectElements.length; i++) {
                 var currentValue = selectElements[i].value;
                 if (currentValue !== '') {
                     console.log(selectElements[i].name)
@@ -316,7 +344,7 @@ function Server() {
  */
     const findNode = (nodes, path) => {
         for (const node of nodes) {
-            if (node.type === 'folder' && node.path === path) {
+            if (node.type === 'folder' &amp;&amp; node.path === path) {
                 return node;
             } else if (node.type === 'folder') {
                 const foundNode = findNode(node.children, path);
@@ -327,9 +355,9 @@ function Server() {
     };
 
     return (
-        <div className="App">
-            <div className="container">
-                <Resizable
+        &lt;div className="App">
+            &lt;div className="container">
+                &lt;Resizable
                     defaultSize={{
                         width: '20vw',
                         height: '100%'
@@ -338,23 +366,23 @@ function Server() {
                     maxWidth="40%"
                     enable={{ right: true }}
                     handleComponent={{
-                        right: <ResizeHandle />
+                        right: &lt;ResizeHandle />
                     }}
                 >
-                    <div className="file-tree">
-                        <input type="file" webkitdirectory="true" onChange={handleFolderUpload} />
-                        <FileTree className="file-tree" files={files} onFileSelect={handleFileSelect}/>
-                    </div>
-                </Resizable>
-                <div className="editor">
+                    &lt;div className="file-tree">
+                        &lt;input type="file" webkitdirectory="true" onChange={handleFolderUpload} />
+                        &lt;FileTree className="file-tree" files={files} onFileSelect={handleFileSelect}/>
+                    &lt;/div>
+                &lt;/Resizable>
+                &lt;div className="editor">
                     {isImageSelected ? (
-                        <img 
+                        &lt;img 
                         src={imageDataUrl} 
                         alt={currentFile} 
                         style={{ maxWidth: '100%', maxHeight: '100%', height: 'auto' }} 
                     />
                     ) : (
-                    <MonacoEditor
+                    &lt;MonacoEditor
                         width="100%"
                         height="100%"
                         language="javascript"
@@ -363,15 +391,37 @@ function Server() {
                         onChange={handleEditorChange}
                         />
                     )}
-                </div>
-            </div>
-            <div className="toolbar">
-                <OptionsComponent/>
-                <button onClick={handleSubmit}>Submit</button>
-                <button onClick={handleDownload}>Download</button>
-            </div>
-        </div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div className="toolbar">
+                &lt;OptionsComponent/>
+                &lt;button onClick={handleSubmit}>Submit&lt;/button>
+                &lt;button onClick={handleDownload}>Download&lt;/button>
+            &lt;/div>
+        &lt;/div>
     );
 }
 
-export default Server;
+export default Server;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#FileTree">FileTree</a></li><li><a href="global.html#OptionsComponent">OptionsComponent</a></li><li><a href="global.html#Server">Server</a></li><li><a href="global.html#Sidebar">Sidebar</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Dec 08 2023 22:19:07 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
