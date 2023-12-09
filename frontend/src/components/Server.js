@@ -10,7 +10,12 @@ import './Toolbar.css';
 
 import './Server.css';
 
-
+/**
+ * Server component handling the main logic of the PlantOML app.
+ * 
+ * This component manages the state and interactions for file uploading, selecting, 
+ * editing, submitting, and downloading in the PlantOML application.
+ */
 function Server() {
     const [files, setFiles] = useState([]);
     const [currentFile, setCurrentFile] = useState('');
@@ -18,12 +23,24 @@ function Server() {
     const [isImageSelected, setIsImageSelected] = useState(false);
     const [imageDataUrl, setImageDataUrl] = useState('');
 
+    /**
+     * Handles the event when a folder is uploaded.
+     * Builds a file tree from the uploaded folder.
+     * 
+     * @param {Object} event - The event object containing the uploaded folder.
+     */
     const handleFolderUpload = (event) => {
         const files = event.target.files;
         const fileTree = buildFileTree(Array.from(files));
         setFiles(fileTree);
     };
     
+    /**
+     * Builds a file tree structure from a list of files.
+     * 
+     * @param {Object[]} fileList - Array of file objects.
+     * @returns {Object[]} The constructed file tree.
+     */
     const buildFileTree = (fileList) => {
         const tree = [];
     
@@ -57,6 +74,12 @@ function Server() {
         return tree;
     };
 
+    /**
+     * Handles the selection of a file from the file tree.
+     * Sets the current file and loads its content into the editor or image viewer.
+     * 
+     * @param {string} filename - The name of the selected file.
+     */
     const handleFileSelect = async (filename) => {
         setCurrentFile(filename);
         const fileExtension = filename.split('.').pop().toLowerCase();
@@ -96,6 +119,8 @@ function Server() {
         }
     };
 
+        // Utility functions for file reading
+
     const readFileAsDataURL = (file) => {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -115,10 +140,14 @@ function Server() {
     };
     
     const handleEditorChange = (newValue) => {
-        console.log('TEST')
         setCode(newValue);
     };
 
+
+    /**
+     * Submits the current state of the project to the backend for processing.
+     * The method constructs a zip file containing the project files and sends it to the backend.
+     */
     const handleSubmit = async () => {
         //handle null options
         var selectElements = document.querySelectorAll('select');
@@ -169,6 +198,11 @@ function Server() {
         }
     };
 
+    /**
+     * Downloads the current project and diagrams as a zip file.
+     * This method zips the project files and diagrams and triggers a download in the browser.
+     */
+
     const handleDownload = async () => {
         const zip = new JSZip();
     
@@ -202,6 +236,15 @@ function Server() {
         }
     };
     
+    /**
+ * Deeply copies a file tree structure.
+ * 
+ * This function creates a deep copy of a file tree, ensuring that each node,
+ * especially file nodes with Blob objects, are correctly duplicated.
+ * 
+ * @param {Object[]} nodes - The file tree nodes to copy.
+ * @returns {Object[]} A deep copy of the file tree.
+ */
     const deepCopyFileTree = (nodes) => { //thanks chatgpt
         return nodes.map(node => {
             if (node.type === 'folder') {
@@ -213,6 +256,14 @@ function Server() {
         });
     };
 
+    /**
+ * Processes a zip file containing diagrams and integrates them into the file tree.
+ * 
+ * This function loads a zip file, extracts its contents, and adds them under a 
+ * new 'diagrams' directory in the file tree.
+ * 
+ * @param {Blob} blob - The blob representing the zip file.
+ */
     const processZip = async (blob) => {
         console.log("HERE")
         console.log(files)
@@ -244,12 +295,25 @@ function Server() {
         setFiles(fileTreeCopy);
     };
 
+    /**
+ * Retrieves the directory path from a file path.
+ * 
+ * @param {string} filePath - The full path of the file.
+ * @returns {string} The directory path of the file.
+ */
     const getDirPath = (filePath) => {
         const pathParts = filePath.split('/');
         pathParts.pop(); 
         return pathParts.join('/');
     };
 
+    /**
+ * Finds a node in the file tree based on its path.
+ * 
+ * @param {Object[]} nodes - The file tree nodes to search through.
+ * @param {string} path - The path to search for.
+ * @returns {Object|null} The found node or null if not found.
+ */
     const findNode = (nodes, path) => {
         for (const node of nodes) {
             if (node.type === 'folder' && node.path === path) {
