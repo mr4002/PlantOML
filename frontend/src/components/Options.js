@@ -1,6 +1,13 @@
 import React from 'react';
 import './Options.css'
 
+
+/**
+ * OptionsComponent to display graphical options for diagram generation.
+ * 
+ * This component provides a series of dropdown menus allowing users to customize
+ * various aspects of the generated diagrams, such as node shape, color, and graph layout.
+ */
 const OptionsComponent = () => {
   return (
     <div className='flexbox'>

@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.plantoml.plantomlserver"},{"l":"com.plantoml.plantomlserver.config"},{"l":"com.plantoml.plantomlserver.controller"},{"l":"com.plantoml.plantomlserver.translator"}];updateSearchResults();
