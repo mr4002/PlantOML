@@ -31,7 +31,7 @@ jobs:
         working-directory: backend/plantoml-server/tests
 
       - name: Run Python script
-        run: ./runTests.py
+        run: python3.9 ./runTests.py
         working-directory: backend/plantoml-server/tests
         
 
