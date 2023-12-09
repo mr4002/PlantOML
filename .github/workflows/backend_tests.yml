@@ -23,6 +23,7 @@ jobs:
           pip3.9 install requests
 
       - name: Run Python script
+        run: ./runTests.py
         working-directory: backend/plantoml-server/tests
-        run: runTests.py
+        
 
