@@ -12,8 +12,8 @@ describe("Frontend API Call Testing", () => {
     
     // const h1 = rootContainer.querySelector("App-header");
     it("should call the API from the frontend", () => {
-      const response = await fetch("localhost:8080/"); // calls local API backend server
-      const diagrams = await response.json();
+      const response = fetch("localhost:8080/"); // calls local API backend server
+      const diagrams = response.json();
       console.log(diagrams);
       assert.equal("Greetings from Spring Boot!", diagrams);
     });
